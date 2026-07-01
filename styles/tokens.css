@@ -1,0 +1,46 @@
+/**
+ * Typography / spacing / radius / shadow tokens.
+ * Colors live in color-tokens.css (generated from color-tokens.json).
+ *
+ * Font sizes, weights, spacing, radius, and shadow below are taken from the
+ * fallback scale in design-tokens.md, since no typography-tokens.json exists
+ * yet — only design-tokens.tokens.json, which covers Cormorant sizing alone
+ * and has no Switzer entries. Replace this block once a proper typography
+ * token source (with Switzer) is dropped in.
+ */
+
+:root {
+  --font-display: 'Cormorant', serif;
+  --font-body: 'Switzer', sans-serif;
+
+  --fs-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --fs-h1: clamp(2rem, 4vw, 3rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.25rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --lh-tight: 1.1;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+
+  --content-max-width: 1200px;
+}
