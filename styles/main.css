@@ -737,6 +737,10 @@ a.pill--availability:hover,
   margin-bottom: var(--space-xs);
 }
 
+.hero__headline-greeting {
+  display: none;
+}
+
 .hero__subtext {
   font-family: var(--font-body);
   font-size: var(--fs-h3);
@@ -2536,6 +2540,20 @@ select.contact__input:invalid {
   }
 
   .page-bizcore .case-study-hero__media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Mikhiyah: match hero video frame to Problem section frame on mobile.
+   Same approach as other pages — hero gets the Problem's 4/3 aspect ratio. */
+@media (max-width: 639px) {
+  .page-mikhiyah .case-study-hero__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .page-mikhiyah .case-study-hero__media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
