@@ -422,13 +422,19 @@ a.pill--availability:hover,
 }
 
 /* Extra clearance under the fixed floating mobile nav (site-nav--mobile-glass
-   removes the header from normal flow, so the hero must reserve its own
-   top space), bumped one step up the existing spacing scale. */
+   removes the header from normal flow, so the first section must reserve
+   its own top space), bumped one step up the existing spacing scale.
+   Each page's first section gets this — .hero on the homepage,
+   .case-study-hero on case study pages, #about on the About page,
+   .contact on the Contact page. */
 @media (max-width: 639px) {
   .site-nav--mobile-glass ~ main .hero,
-  .site-nav--mobile-glass ~ main .contact,
-  .site-nav--mobile-glass ~ main #about,
   .site-nav--mobile-glass ~ main .case-study-hero {
+    padding-block-start: var(--space-2xl);
+  }
+
+  .page-about .site-nav--mobile-glass ~ main #about,
+  .page-contact .site-nav--mobile-glass ~ main .contact {
     padding-block-start: var(--space-2xl);
   }
 
@@ -2282,6 +2288,12 @@ select.contact__input:invalid {
   color: var(--color-text-primary);
   font-family: var(--font-body);
   font-size: var(--fs-body);
+}
+
+@media (max-width: 639px) {
+  .site-footer {
+    padding-block: var(--space-md);
+  }
 }
 
 .site-footer .container {
