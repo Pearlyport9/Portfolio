@@ -427,7 +427,8 @@ a.pill--availability:hover,
 @media (max-width: 639px) {
   .site-nav--mobile-glass ~ main .hero,
   .site-nav--mobile-glass ~ main .contact,
-  .site-nav--mobile-glass ~ main #about {
+  .site-nav--mobile-glass ~ main #about,
+  .site-nav--mobile-glass ~ main .case-study-hero {
     padding-block-start: var(--space-2xl);
   }
 
@@ -2485,6 +2486,72 @@ select.contact__input:invalid {
 .page-stackit .case-study-gallery .mockup:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 28px color-mix(in srgb, var(--color-gold) 35%, transparent);
+}
+
+/* Everiithing case study: uniform image-frame sizing on mobile — hero video,
+   problem image, and solution image all use the problem frame's 4/3 aspect
+   ratio so they share identical width and height below 640px. */
+@media (max-width: 639px) {
+  .page-everiithing .case-study-hero__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .page-everiithing .case-study-hero__media video,
+  .page-everiithing .case-study-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-everiithing .case-study-editorial--reverse .case-study-editorial__media {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Ceembee Footies: match hero image frame to Problem section frame on mobile.
+   Problem uses case-study-editorial__media--short (4/3) — hero gets the same
+   aspect-ratio so both frames share identical width and height below 640px.
+   The source SVG (6427×3764) has the phone mockups centered in a wide brown
+   background — object-fit:cover already crops the outer 26% on each side, but
+   the phones still only fill ~61% of the frame width. A 1.35x scale zoom
+   brings the phones up to ~82% width coverage without changing the frame. */
+@media (max-width: 639px) {
+  .page-ceembee .case-study-hero__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .page-ceembee .case-study-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+  }
+}
+
+/* BIZCORE Consulting: match hero video frame to Problem section frame on mobile.
+   Same approach — hero frame gets the Problem's 4/3 aspect ratio below 640px. */
+@media (max-width: 639px) {
+  .page-bizcore .case-study-hero__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .page-bizcore .case-study-hero__media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ReceiptVault: bottom screens card (login) matches the top card's (Report)
+   dimensions on mobile. Top image is 207×187 — give the bottom image the
+   same aspect ratio so both cards share identical width and height, with
+   object-fit: cover to keep the centered phone mockup visible and at a
+   similar visual scale to the top card's phone. */
+@media (max-width: 639px) {
+  .page-receiptvault .case-study-gallery .mockup--own-bg:nth-child(2) img {
+    aspect-ratio: 207 / 187;
+    object-fit: cover;
+  }
 }
 
 /* Screens gallery — staggered scroll-triggered entrance, fade + slide-up, once.
