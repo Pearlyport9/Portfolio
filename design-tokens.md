@@ -22,7 +22,7 @@ Pearl will manually drop two JSON files into the project root before the build:
 ---
 
 - Page background is cream/light by default. Dark (`--color-bg-dark`) is used only as an accent for specific sections (e.g. footer, a contrast band), never the whole page.
-- One accent color only (gold) — not a multi-color pill system.
+- Two accents, distinct roles: gold (`--color-gold`) for highlights, focus rings, and decorative accents; orange (`--color-accent`) for primary buttons and CTAs only. Not a multi-color pill system beyond these two.
 - Rounded pill-shaped tags for role labels and project tags (Solo/Collaborative).
 - Italic serif (Cormorant italic) used sparingly for emphasis within a sentence, not as a default style.
 - Small decorative flourishes optional near hero statement or section headers — used sparingly, not on every section.
@@ -35,7 +35,7 @@ Pearl will manually drop two JSON files into the project root before the build:
 ```css
 :root {
   /* Brand core */
-  --color-gold: #8B6B15;        /* primary accent */
+  --color-gold: #8B6B15;        /* secondary/decorative accent */
   --color-bg-dark: #2A2008;     /* dark background */
   --color-cream: #F8F5F0;       /* light background / accent */
 
@@ -47,10 +47,14 @@ Pearl will manually drop two JSON files into the project root before the build:
 
   /* State */
   --color-link-hover: #A8842A;
+
+  /* CTA accent (distinct from gold — buttons/pills only) */
+  --color-accent: #E0522D;
+  --color-accent-hover: #CC4125;
 }
 ```
 
-Usage rule: gold is an accent, not a fill. Use it for CTAs, hover states, small highlights, dividers — not large background blocks unless it's an intentional full dark/gold section.
+Usage rule: gold is a decorative/secondary accent (hover states, small highlights, dividers, focus rings) — not large background blocks unless it's an intentional full dark/gold section. Orange (`--color-accent`) is reserved for primary buttons and CTAs; don't use it for decorative highlights or gold's use cases.
 
 ---
 

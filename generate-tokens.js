@@ -12,17 +12,18 @@ const BRAND_BORDER = '#E5E0D8';
 const BRAND_LINK_HOVER = '#A8842A';
 
 function resolveKeyColors(data) {
-  const { primary, secondary, tertiary } = data.color.key;
-  if (!primary || !secondary || !tertiary) {
+  const { primary, secondary, tertiary, accent, accentHover } = data.color.key;
+  if (!primary || !secondary || !tertiary || !accent || !accentHover) {
     throw new Error(
-      'color.key.primary/secondary/tertiary must all be present in color-tokens.json to resolve gold/cream/dark-brown brand colors.'
+      'color.key.primary/secondary/tertiary/accent/accentHover must all be present in color-tokens.json to resolve gold/cream/dark-brown/accent brand colors.'
     );
   }
-  // primary -> gold accent, secondary -> cream, tertiary -> dark-brown background.
-  return { gold: primary, cream: secondary, bgDark: tertiary };
+  // primary -> gold accent, secondary -> cream, tertiary -> dark-brown background,
+  // accent/accentHover -> orange CTA/button accent (distinct from gold).
+  return { gold: primary, cream: secondary, bgDark: tertiary, accent, accentHover };
 }
 
-function buildRoles({ gold, cream, bgDark }, { background, surface, textPrimary, textOnDark }) {
+function buildRoles({ gold, cream, bgDark, accent, accentHover }, { background, surface, textPrimary, textOnDark }) {
   return {
     'color-gold': gold,
     'color-cream': cream,
@@ -34,6 +35,8 @@ function buildRoles({ gold, cream, bgDark }, { background, surface, textPrimary,
     'color-text-muted': BRAND_TEXT_MUTED,
     'color-border': BRAND_BORDER,
     'color-link-hover': BRAND_LINK_HOVER,
+    'color-accent': accent,
+    'color-accent-hover': accentHover,
   };
 }
 
@@ -52,9 +55,10 @@ function generate() {
   const data = JSON.parse(raw);
   const keyColors = resolveKeyColors(data);
 
-  // Light mode → cream background, dark text, gold accent.
+  // Light mode → a lighter step of the secondary (cream) palette for the page
+  // background, cream for component surfaces, dark text, gold accent.
   const lightRoles = buildRoles(keyColors, {
-    background: keyColors.cream,
+    background: data.color.palette.secondary['98'],
     surface: keyColors.cream,
     textPrimary: BRAND_TEXT_PRIMARY_LIGHT,
     textOnDark: keyColors.cream,
@@ -72,10 +76,11 @@ function generate() {
  * Auto-generated from color-tokens.json by generate-tokens.js.
  * Do not edit directly — re-run \`node generate-tokens.js\` instead.
  *
- * Gold/cream/dark-brown are sourced directly from color.key.primary/
- * secondary/tertiary in color-tokens.json (not hardcoded here). Text-muted,
- * border, and link-hover are not present in color-tokens.json and are taken
- * from design-tokens.md as declared fallbacks.
+ * Gold/cream/dark-brown/accent are sourced directly from color.key.primary/
+ * secondary/tertiary/accent/accentHover in color-tokens.json (not hardcoded
+ * here). Text-muted, border, and link-hover are not present in
+ * color-tokens.json and are declared fallbacks maintained directly in this
+ * script.
  */
 
 ${toCssBlock(':root', lightRoles)}

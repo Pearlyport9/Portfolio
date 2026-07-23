@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ceembee Footies — E-Commerce Design | Olayemi Oluwatominiyi</title>
+  <title>Ceembee Footies — E-Commerce Site | Olayemi</title>
   <meta name="description" content="A clean, minimal e-commerce storefront for a handmade leather shoes and slides brand — designed to let the product do the talking." />
-  <meta property="og:title" content="Ceembee Footies — E-Commerce Design | Olayemi Oluwatominiyi" />
+  <link rel="canonical" href="https://olayemi-portfolio.vercel.app/work/ceembee-footies.html" />
+  <meta property="og:title" content="Ceembee Footies — E-Commerce Site | Olayemi" />
   <meta property="og:description" content="A clean, minimal e-commerce storefront for a handmade leather shoes and slides brand — designed to let the product do the talking." />
+  <meta property="og:url" content="https://olayemi-portfolio.vercel.app/work/ceembee-footies.html" />
+  <meta property="og:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Olayemi Oluwatominiyi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ceembee Footies — E-Commerce Site | Olayemi" />
+  <meta name="twitter:description" content="A clean, minimal e-commerce storefront for a handmade leather shoes and slides brand — designed to let the product do the talking." />
+  <meta name="twitter:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
   <link rel="stylesheet" href="/styles/color-tokens.css" />
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/main.css" />
 </head>
-<body>
+<body class="page-ceembee">
 
   <header class="site-nav">
     <div class="container">
@@ -20,10 +29,11 @@
         <ul class="site-nav__links">
           <li><a href="/index.html#work">Work</a></li>
           <li><a href="/about.html">About</a></li>
-          <li><a href="/index.html#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
         </ul>
       </nav>
-      <span class="pill pill--availability">🟢 Available for New Projects</span>
+      <a href="/contact.html#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
   </header>
 
@@ -31,13 +41,12 @@
     <section class="case-study-hero">
       <div class="container">
         <div class="case-study-hero__meta">
-          <span class="pill">Solo</span>
+          <span class="pill pill--status">Solo</span>
         </div>
         <h1>Ceembee Footies</h1>
-        <p class="hero__subtext">A clean, minimal e-commerce site for a handmade leather shoes and slides brand — browse, pick your style, and checkout.</p>
-        <div class="media-placeholder">
-          <!-- TO FILL: /assets/work/ceembee/screen-1-homepage (use as hero image) -->
-          Hero image — TO FILL
+        <p class="hero__subtext">A clean, minimal e-commerce site for a handmade leather shoes and slides brand: browse, pick your style, and checkout.</p>
+        <div class="case-study-hero__media">
+          <img src="/assets/work/ceembee/ceembee%20new.svg" alt="Ceembee Footies homepage" />
         </div>
       </div>
     </section>
@@ -45,18 +54,35 @@
     <section class="case-study-section">
       <div class="container">
         <h2>Problem</h2>
-        <p>Ceembee Footies needed a simple, focused online storefront that let the product do the talking — handmade leather shoes and slides that needed to be seen clearly, selected easily, and purchased without friction. No complex flows, no unnecessary pages — just a clean shopping experience that matched the craftsmanship of the product.</p>
+        <div class="case-study-editorial case-study-editorial--top">
+          <div class="case-study-editorial__media case-study-editorial__media--short">
+            <img src="/assets/work/ceembee/problem%20svgggg.svg" alt="The friction Ceembee Footies needed to remove from its online shopping experience" loading="lazy" />
+          </div>
+          <div class="case-study-editorial__content">
+            <p>Ceembee Footies needed a simple, focused online storefront that let the product do the talking: handmade leather shoes and slides that needed to be seen clearly, selected easily, and purchased without friction. No complex flows, no unnecessary pages, just a clean shopping experience that matched the craftsmanship of the product. Handmade leather goods also don't translate well to generic marketplace listings, where product photos compete with mass-produced alternatives and the craftsmanship behind each pair is easy to overlook. The brand needed a storefront it fully controlled, from photography to checkout, to present that quality on its own terms. Built and maintained solo, the site also had to stay lightweight and easy to update without needing a developer for every new product drop or price change.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="case-study-section">
       <div class="container">
         <h2>Solution / Process</h2>
-        <ul>
-          <li>Designed and built solo as a straightforward e-commerce experience.</li>
-          <li>Core flow: landing page → product listing → product detail → cart → checkout.</li>
-          <li>Design focused on product photography as the hero element — large visuals, minimal UI clutter.</li>
-        </ul>
+        <div class="case-study-editorial case-study-editorial--reverse">
+          <div class="case-study-editorial__media case-study-editorial__media--short">
+            <img src="/assets/work/ceembee/Solution%20svg.svg" alt="Ceembee Footies' clean, product-first e-commerce flow" loading="lazy" />
+          </div>
+          <div class="case-study-editorial__content">
+            <ul>
+              <li>Designed and built solo as a straightforward e-commerce experience, prioritizing a fast launch over feature breadth.</li>
+              <li>Core flow: landing page → product listing → product detail → cart → checkout, kept short to minimize drop-off.</li>
+              <li>Organized the catalog by style and category (shoes vs. slides) so customers could browse and find their size with minimal clicks.</li>
+              <li>Design focused on product photography as the hero element: large visuals, minimal UI clutter, letting the craftsmanship of each pair carry the page.</li>
+              <li>Built mobile-first, since most of the brand's traffic arrives through Instagram and other social links.</li>
+              <li>Structured content and pricing to be easy to update solo: new drops and price changes don't require touching code.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -64,20 +90,7 @@
       <div class="container">
         <h2>Outcome</h2>
         <p>Live and fully operational. Ceembee Footies is accepting orders, with a clean shopping experience that puts the handmade product front and centre.</p>
-      </div>
-    </section>
-
-    <section class="case-study-section">
-      <div class="container">
-        <h2>Screens</h2>
-        <div class="case-study-gallery">
-          <!-- TO FILL: /assets/work/ceembee/screen-2-listing -->
-          <div class="media-placeholder">Product listing page — TO FILL</div>
-          <!-- TO FILL: /assets/work/ceembee/screen-3-detail -->
-          <div class="media-placeholder">Product detail page — TO FILL</div>
-          <!-- TO FILL: /assets/work/ceembee/screen-4-cart -->
-          <div class="media-placeholder">Cart — TO FILL</div>
-        </div>
+        <p><a class="button button--pill" href="https://ceembeefooties.vercel.app/" target="_blank" rel="noopener">View live site →</a></p>
       </div>
     </section>
 
@@ -85,14 +98,36 @@
       <a href="/work/bizcore.html">← BIZCORE Consulting</a>
       <a href="/work/receiptvault.html">Next: ReceiptVault →</a>
     </nav>
+
+    <section class="case-study-cta">
+      <div class="container case-study-cta__layout">
+        <div class="case-study-cta__image-frame">
+          <img src="/assets/about/About%20us%20pic%202%20svg.svg" alt="Photo of Olayemi" class="case-study-cta__image" loading="lazy" />
+        </div>
+        <div class="case-study-cta__text">
+          <h2 class="italic-accent">Got a product to build? Let's talk.</h2>
+          <a class="button button--pill" href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>I'm Olayemi Oluwatominiyi — Product Designer (UI/UX) based in Nigeria, designing for fintechs, SaaS, and startups. Building something? Let's talk.</p>
-      <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+      <div class="site-footer__info">
+        <a href="mailto:pearlyport9@gmail.com" class="site-footer__email">pearlyport9@gmail.com</a>
+        <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+        <p class="site-footer__clock"></p>
+      </div>
+      <div class="site-footer__socials">
+        <a href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/pearlgrid?s=11" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://github.com/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">Resume</a>
+      </div>
     </div>
   </footer>
 
+  <script src="/scripts/main.js"></script>
 </body>
 </html>

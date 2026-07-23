@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Olayemi | Product Designer &amp; Design Engineer</title>
+  <meta name="description" content="Book a 30-minute call or send your project brief. I respond to every request within 24 hours." />
+  <link rel="canonical" href="https://olayemi-portfolio.vercel.app/contact.html" />
+  <meta property="og:title" content="Contact Olayemi | Product Designer &amp; Design Engineer" />
+  <meta property="og:description" content="Book a 30-minute call or send your project brief. I respond to every request within 24 hours." />
+  <meta property="og:url" content="https://olayemi-portfolio.vercel.app/contact.html" />
+  <meta property="og:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Olayemi Oluwatominiyi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Olayemi | Product Designer &amp; Design Engineer" />
+  <meta name="twitter:description" content="Book a call or send over your project details. I respond to every request within 24 hours." />
+  <meta name="twitter:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
+  <link rel="stylesheet" href="/styles/color-tokens.css" />
+  <link rel="stylesheet" href="/styles/tokens.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body class="page-contact">
+
+  <header class="site-nav site-nav--mobile-glass">
+    <div class="container">
+      <a href="/index.html" class="site-nav__brand">Olayemi</a>
+      <nav aria-label="Primary">
+        <ul class="site-nav__links">
+          <li><a href="/index.html#work">Work</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="pill pill--availability">Available for New Projects</a>
+    </div>
+
+    <div class="site-nav__float">
+      <a href="/index.html" class="site-nav__float-brand">Olayemi</a>
+      <button type="button" class="site-nav__float-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+        <span class="site-nav__float-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav__panel" id="mobile-nav-panel" aria-label="Primary mobile" hidden>
+      <button type="button" class="site-nav__panel-close" aria-label="Close menu">
+        <span class="site-nav__panel-close-icon" aria-hidden="true"></span>
+      </button>
+      <ul>
+        <li><a href="/index.html#work">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h1 class="italic-accent">Say hey.</h1>
+        <p class="contact__subtext contact__subtext-full">Book a slot on my calendar, or send over your project details. I respond to every request within 24 hours.</p>
+        <p class="contact__subtext contact__subtext-compact">Book a call<br>or send project details</p>
+
+        <div class="contact__toggle" role="tablist" aria-label="Get in touch">
+          <button type="button" class="contact__tab is-active" role="tab" id="contact-tab-call" aria-selected="true" aria-controls="contact-panel-call">Book a call</button>
+          <button type="button" class="contact__tab" role="tab" id="contact-tab-brief" aria-selected="false" aria-controls="contact-panel-brief" tabindex="-1">Send project details</button>
+        </div>
+
+        <div class="contact__panel" id="contact-panel-call" role="tabpanel" aria-labelledby="contact-tab-call">
+          <div class="contact__cal-wrap">
+            <iframe
+              class="contact__cal-embed"
+              src="https://cal.eu/olayemi-gnwhh0/30min"
+              title="Book a 30 minute call with Olayemi"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="contact__panel" id="contact-panel-brief" role="tabpanel" aria-labelledby="contact-tab-brief" hidden>
+          <form class="contact__form contact__form--brief" action="https://formspree.io/f/xdarwvzz" method="POST">
+            <input type="hidden" name="_subject" value="New project brief" />
+
+            <div class="contact__form-body">
+              <div class="contact__form-fields">
+                <div>
+                  <label class="contact__label" for="brief-name">Your name</label>
+                  <input class="contact__input" type="text" name="name" id="brief-name" required />
+                </div>
+                <div>
+                  <label class="contact__label" for="brief-email">Work email</label>
+                  <input class="contact__input" type="email" name="email" id="brief-email" required />
+                </div>
+              </div>
+
+              <fieldset class="contact__project-types">
+                <legend class="eyebrow">What do you need help with?</legend>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Product design" />
+                  Product design
+                </label>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Design systems" />
+                  Design systems
+                </label>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Website design" />
+                  Website design
+                </label>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Add-ons" />
+                  Add-ons
+                </label>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Ongoing design support" />
+                  Ongoing design support
+                </label>
+              </fieldset>
+
+              <div class="contact__form-fields">
+                <div>
+                  <label class="contact__label" for="brief-budget">What's your budget?</label>
+                  <select class="contact__input" name="budget" id="brief-budget" required>
+                    <option value="" disabled selected>Select a range</option>
+                    <option value="Under $1,000">Under $1,000</option>
+                    <option value="$1,000 – $3,000">$1,000 – $3,000</option>
+                    <option value="$3,000 – $7,000">$3,000 – $7,000</option>
+                    <option value="$7,000+">$7,000+</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="contact__label" for="brief-timeline">What's your timeline?</label>
+                  <select class="contact__input" name="timeline" id="brief-timeline" required>
+                    <option value="" disabled selected>Select a timeline</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="1–2 weeks">1–2 weeks</option>
+                    <option value="1 month">1 month</option>
+                    <option value="1–3 months">1–3 months</option>
+                    <option value="Flexible / just exploring">Flexible / just exploring</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="contact__label" for="brief-message">Anything else?</label>
+                  <textarea class="contact__input contact__textarea" name="message" id="brief-message" rows="4"></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="button button--pill">Send project details</button>
+            </div>
+
+            <p class="contact__confirmation" role="status" hidden>Thanks! I'll get back to you within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-cta">
+      <div class="container case-study-cta__layout">
+        <div class="case-study-cta__image-frame">
+          <img src="/assets/about/About%20us%20pic%202%20svg.svg" alt="Photo of Olayemi" class="case-study-cta__image" loading="lazy" />
+        </div>
+        <div class="case-study-cta__text">
+          <h2 class="italic-accent">Got a product to build? Let's talk.</h2>
+          <a class="button button--pill" href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__info">
+        <a href="mailto:pearlyport9@gmail.com" class="site-footer__email">pearlyport9@gmail.com</a>
+        <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+        <p class="site-footer__clock"></p>
+      </div>
+      <div class="site-footer__socials">
+        <a href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/pearlgrid?s=11" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://github.com/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

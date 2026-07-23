@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StackIt — Student Fintech UX Case Study | Olayemi Oluwatominiyi</title>
-  <meta name="description" content="A full UX case study for a student-centric savings app — from user research and empathy mapping through to high-fidelity prototype, designed to help undergraduates build financial independence." />
-  <meta property="og:title" content="StackIt — Student Fintech UX Case Study | Olayemi Oluwatominiyi" />
-  <meta property="og:description" content="A full UX case study for a student-centric savings app — from user research and empathy mapping through to high-fidelity prototype, designed to help undergraduates build financial independence." />
+  <title>StackIt — Student Fintech Case Study | Olayemi</title>
+  <meta name="description" content="A full UX case study for a student-centric savings app: from user research and empathy mapping through to high-fidelity prototype, designed to help undergraduates build financial independence." />
+  <link rel="canonical" href="https://olayemi-portfolio.vercel.app/work/stackit.html" />
+  <meta property="og:title" content="StackIt — Student Fintech Case Study | Olayemi" />
+  <meta property="og:description" content="A full UX case study for a student-centric savings app: from user research and empathy mapping through to high-fidelity prototype, designed to help undergraduates build financial independence." />
+  <meta property="og:url" content="https://olayemi-portfolio.vercel.app/work/stackit.html" />
+  <meta property="og:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Olayemi Oluwatominiyi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="StackIt — Student Fintech Case Study | Olayemi" />
+  <meta name="twitter:description" content="A full UX case study for a student-centric savings app: from user research and empathy mapping through to high-fidelity prototype, designed to help undergraduates build financial independence." />
+  <meta name="twitter:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
   <link rel="stylesheet" href="/styles/color-tokens.css" />
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/main.css" />
 </head>
-<body>
+<body class="page-stackit">
 
   <header class="site-nav">
     <div class="container">
@@ -20,10 +29,11 @@
         <ul class="site-nav__links">
           <li><a href="/index.html#work">Work</a></li>
           <li><a href="/about.html">About</a></li>
-          <li><a href="/index.html#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
         </ul>
       </nav>
-      <span class="pill pill--availability">🟢 Available for New Projects</span>
+      <a href="/contact.html#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
   </header>
 
@@ -32,14 +42,10 @@
     <section class="case-study-hero">
       <div class="container">
         <div class="case-study-hero__meta">
-          <span class="pill">UX Case Study · Concept</span>
+          <span class="pill pill--status">UX Case Study · Concept</span>
         </div>
         <h1>StackIt</h1>
         <p class="hero__subtext">A student-centric fintech concept helping undergraduates build saving habits during school and a financial foundation for life after graduation.</p>
-        <div class="media-placeholder">
-          <!-- TO FILL: /assets/work/stackit/screen-1-dashboard (Welcome Olayemi, My Savings ₦384,000, Target Goal + Lock Box) -->
-          Dashboard hero screen — TO FILL
-        </div>
       </div>
     </section>
 
@@ -47,7 +53,7 @@
     <section class="case-study-section">
       <div class="container">
         <h2>Problem</h2>
-        <p>Ayo was a bright student who never saved because money always seemed to come. When he graduated with a business dream and no savings, then faced his mother's medical emergency with nothing set aside, it was too late. StackIt is built for every Ayo — making saving automatic, purposeful, and tied to life after school.</p>
+        <p>Ayo was a bright student who never saved because money always seemed to come. When he graduated with a business dream and no savings, then faced his mother's medical emergency with nothing set aside, it was too late. StackIt is built for every Ayo, making saving automatic, purposeful, and tied to life after school.</p>
       </div>
     </section>
 
@@ -66,7 +72,7 @@
           </div>
           <div>
             <p class="stat-block__figure">100%</p>
-            <p>said financial independence after graduation was very important to them — yet most had no savings plan.</p>
+            <p>said financial independence after graduation was very important to them, yet most had no savings plan.</p>
           </div>
         </div>
         <p class="hero__subtext">We surveyed 20 undergraduates across Nigerian universities to identify financial patterns and behaviors.</p>
@@ -77,7 +83,7 @@
     <section class="case-study-section">
       <div class="container">
         <h2>User Persona</h2>
-        <div class="card">
+        <div class="card card--persona">
           <h3>Okon Mandu</h3>
           <p class="eyebrow">Age 25 · Student · Calabar</p>
           <p>300-level Computer Science student at University of Calabar. Runs a computer center on campus but struggles to separate business and personal finances, often undercharging out of people-pleasing.</p>
@@ -91,8 +97,9 @@
     <section class="case-study-section">
       <div class="container">
         <h2>Empathy Map</h2>
-        <!-- TO FILL: /assets/work/stackit/empathy-map -->
-        <div class="media-placeholder">Empathy map — TO FILL</div>
+        <div class="mockup mockup--own-bg">
+          <img src="/assets/work/stackit/Empathy%20Map%20%202.svg" alt="StackIt empathy map" loading="lazy" />
+        </div>
         <p class="hero__subtext">Mapping what students say, think, do, and feel revealed a consistent gap between their financial aspirations and their daily behavior.</p>
       </div>
     </section>
@@ -101,8 +108,9 @@
     <section class="case-study-section">
       <div class="container">
         <h2>Wireframes</h2>
-        <!-- TO FILL: /assets/work/stackit/wireframes-row (Splash → Onboarding → Dashboard → Savings Goal → Lockbox) -->
-        <div class="media-placeholder">Splash → Onboarding → Dashboard → Savings Goal → Lockbox — TO FILL</div>
+        <div class="mockup mockup--own-bg">
+          <img src="/assets/work/stackit/Wireframe%20(2).svg" alt="StackIt wireframes: Splash, Onboarding, Dashboard, Savings Goal, Lockbox" loading="lazy" />
+        </div>
       </div>
     </section>
 
@@ -111,14 +119,18 @@
       <div class="container">
         <h2>Final UI Screens</h2>
         <div class="case-study-gallery">
-          <!-- TO FILL: /assets/work/stackit/screen-1-dashboard -->
-          <div class="media-placeholder">Dashboard — My Savings, Target Goal, Lock Box — TO FILL</div>
-          <!-- TO FILL: /assets/work/stackit/screen-2-savings -->
-          <div class="media-placeholder">Specialized Savings Plans (Emergency Fund, Grad Save, Lock Box, Business Savings) — TO FILL</div>
-          <!-- TO FILL: /assets/work/stackit/screen-3-autosave -->
-          <div class="media-placeholder">AutoSave Setup screen — TO FILL</div>
-          <!-- TO FILL: /assets/work/stackit/screen-4-gamification -->
-          <div class="media-placeholder">Gamification — Badges &amp; Achievements / Education Hub — TO FILL</div>
+          <div class="mockup mockup--persona-color">
+            <img src="/assets/work/stackit/stackit%20new%20mockup.svg" alt="StackIt dashboard: My Savings, Target Goal, Lock Box" loading="lazy" />
+          </div>
+          <div class="mockup mockup--persona-color">
+            <img src="/assets/work/stackit/stackit%20mockup%203.svg" alt="StackIt AutoSave setup screen" loading="lazy" />
+          </div>
+          <div class="mockup mockup--persona-color">
+            <img src="/assets/work/stackit/stackit%20mockup%202.svg" alt="StackIt specialized savings plans: Emergency Fund, Grad Save, Lock Box, Business Savings" loading="lazy" />
+          </div>
+          <div class="mockup mockup--persona-color">
+            <img src="/assets/work/stackit/stackit%20mockup%204.svg" alt="StackIt gamification: badges and achievements" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
@@ -127,8 +139,8 @@
     <section class="case-study-section">
       <div class="container">
         <h2>Outcome</h2>
-        <p>Completed as a full UX case study — from user research and empathy mapping through to high-fidelity prototype. Currently at concept stage, with the full process documented and published on Behance.</p>
-        <p><a class="button button--outline" href="https://www.behance.net/gallery/243710251/A-Saveup-Application-for-Undergraduates" target="_blank" rel="noopener">View full case study on Behance →</a></p>
+        <p>Completed as a full UX case study: from user research and empathy mapping through to high-fidelity prototype. Currently at concept stage, with the full process documented and published on Behance.</p>
+        <p><a class="button button--pill" href="https://www.behance.net/gallery/243710251/A-Saveup-Application-for-Undergraduates" target="_blank" rel="noopener">View full case study on Behance →</a></p>
       </div>
     </section>
 
@@ -136,14 +148,36 @@
       <a href="/work/mikhiyah.html">← Mikhiyah</a>
       <a href="/work/everiithing.html">Back to Everiithing →</a>
     </nav>
+
+    <section class="case-study-cta">
+      <div class="container case-study-cta__layout">
+        <div class="case-study-cta__image-frame">
+          <img src="/assets/about/About%20us%20pic%202%20svg.svg" alt="Photo of Olayemi" class="case-study-cta__image" loading="lazy" />
+        </div>
+        <div class="case-study-cta__text">
+          <h2 class="italic-accent">Got a product to build? Let's talk.</h2>
+          <a class="button button--pill" href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>I'm Olayemi Oluwatominiyi — Product Designer (UI/UX) based in Nigeria, designing for fintechs, SaaS, and startups. Building something? Let's talk.</p>
-      <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+      <div class="site-footer__info">
+        <a href="mailto:pearlyport9@gmail.com" class="site-footer__email">pearlyport9@gmail.com</a>
+        <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+        <p class="site-footer__clock"></p>
+      </div>
+      <div class="site-footer__socials">
+        <a href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/pearlgrid?s=11" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://github.com/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">Resume</a>
+      </div>
     </div>
   </footer>
 
+  <script src="/scripts/main.js"></script>
 </body>
 </html>

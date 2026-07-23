@@ -1,0 +1,10 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "browser-sync start --server --port 8080 --files \"**/*.html\" \"styles/**/*.css\" \"scripts/**/*.js\" --no-notify"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3"
+  }
+}

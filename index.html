@@ -3,28 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Olayemi Oluwatominiyi — Product Designer &amp; Design Engineer</title>
-  <meta name="description" content="Freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design experiences that feel effortless — and build them too." />
-  <meta property="og:title" content="Olayemi Oluwatominiyi — Product Designer &amp; Design Engineer" />
-  <meta property="og:description" content="Freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design experiences that feel effortless — and build them too." />
+  <title>Olayemi Oluwatominiyi | Product Designer &amp; Engineer</title>
+  <meta name="description" content="Freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design experiences that feel effortless, and build them too." />
+  <link rel="canonical" href="https://olayemi-portfolio.vercel.app/index.html" />
+  <meta property="og:title" content="Olayemi Oluwatominiyi | Product Designer &amp; Engineer" />
+  <meta property="og:description" content="Freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design experiences that feel effortless, and build them too." />
+  <meta property="og:url" content="https://olayemi-portfolio.vercel.app/index.html" />
+  <meta property="og:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Olayemi Oluwatominiyi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Olayemi Oluwatominiyi | Product Designer &amp; Engineer" />
+  <meta name="twitter:description" content="Freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design experiences that feel effortless, and build them too." />
+  <meta name="twitter:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
   <link rel="stylesheet" href="/styles/color-tokens.css" />
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/main.css" />
 </head>
 <body>
 
-  <header class="site-nav">
+  <header class="site-nav site-nav--mobile-glass">
     <div class="container">
       <a href="/index.html" class="site-nav__brand">Olayemi</a>
       <nav aria-label="Primary">
         <ul class="site-nav__links">
           <li><a href="#work">Work</a></li>
           <li><a href="/about.html">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
         </ul>
       </nav>
-      <span class="pill pill--availability">🟢 Available for New Projects</span>
+      <a href="#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
+
+    <div class="site-nav__float">
+      <a href="/index.html" class="site-nav__float-brand">Olayemi</a>
+      <button type="button" class="site-nav__float-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+        <span class="site-nav__float-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav__panel" id="mobile-nav-panel" aria-label="Primary mobile" hidden>
+      <button type="button" class="site-nav__panel-close" aria-label="Close menu">
+        <span class="site-nav__panel-close-icon" aria-hidden="true"></span>
+      </button>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -33,14 +62,42 @@
     <section class="hero">
       <div class="container">
         <p class="hero__greeting">Hi there 👋</p>
-        <div class="hero__pills">
-          <span class="pill">Product Designer</span>
-          <span class="pill">UI/UX</span>
-          <span class="pill">Design Engineer</span>
-        </div>
-        <h1 class="hero__headline">Hey, I'm Olayemi — a product designer who also builds what she designs.</h1>
-        <p class="hero__subtext">I design landing pages that convert, mobile apps that feel effortless, and experiences users return to. Building something? Let's talk.</p>
-        <a href="#work" class="button">View my work</a>
+        <h1 class="hero__headline">Hey, I'm Olayemi, a product designer who <em>also builds what she designs</em>.</h1>
+        <p class="hero__subtext">I'm passionate about designing human-centered digital experiences, products that convert, apps that feel effortless.</p>
+        <a href="#work" class="button hero__cta">View my work</a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+      <div class="container">
+        <h2 class="italic-accent">Designed. Built. Shipped.</h2>
+        <div class="services__grid">
+            <div class="service-pill">
+              <span class="service-pill__icon">🎨</span>
+              <span class="service-pill__label">UI Design</span>
+            </div>
+            <div class="service-pill">
+              <span class="service-pill__icon">🔍</span>
+              <span class="service-pill__label">UX Research</span>
+            </div>
+            <div class="service-pill">
+              <span class="service-pill__icon">⚡</span>
+              <span class="service-pill__label">Prototyping</span>
+            </div>
+            <div class="service-pill">
+              <span class="service-pill__icon">🧩</span>
+              <span class="service-pill__label">Design Systems</span>
+            </div>
+            <div class="service-pill">
+              <span class="service-pill__icon">🛠️</span>
+              <span class="service-pill__label">Design Engineering</span>
+            </div>
+            <div class="service-pill">
+              <span class="service-pill__icon">🎯</span>
+              <span class="service-pill__label">Product Strategy</span>
+            </div>
+          </div>
       </div>
     </section>
 
@@ -53,62 +110,56 @@
 
           <a class="card card--project" href="/work/everiithing.html">
             <div class="card__thumb">
-              <!-- TO FILL: /assets/work/everiithing/screen-1-booking (see assets-manifest.md) -->
-              <div class="media-placeholder">Everiithing thumbnail — TO FILL</div>
+              <video src="/assets/work/everiithing/Video%203.mp4" muted autoplay loop playsinline></video>
             </div>
-            <span class="pill">Solo</span>
+            <span class="pill pill--status">Solo</span>
             <h3>Everiithing</h3>
-            <p>Nigeria's first fully managed, verification-first marketplace for home and business service providers — designed and built end-to-end, from concept through full-stack deployment.</p>
+            <p>Nigeria's first verification-first marketplace for home and business services, designed and built end-to-end.</p>
           </a>
 
           <a class="card card--project" href="/work/bizcore.html">
             <div class="card__thumb">
-              <!-- TO FILL: /assets/work/bizcore/screen-1-hero -->
-              <div class="media-placeholder">BIZCORE thumbnail — TO FILL</div>
+              <video src="/assets/work/bizcore/Video%202%20(2).mp4" muted autoplay loop playsinline></video>
             </div>
-            <span class="pill">Solo</span>
+            <span class="pill pill--status">Solo</span>
             <h3>BIZCORE Consulting</h3>
-            <p>A multi-page consulting website for a Lagos-based finance, market research, and data analytics consultancy, designed to build credibility and generate client leads.</p>
-          </a>
-
-          <a class="card card--project" href="/work/ceembee-footies.html">
-            <div class="card__thumb">
-              <!-- TO FILL: /assets/work/ceembee/screen-1-homepage -->
-              <div class="media-placeholder">Ceembee Footies thumbnail — TO FILL</div>
-            </div>
-            <span class="pill">Solo</span>
-            <h3>Ceembee Footies</h3>
-            <p>A clean, minimal e-commerce site for a handmade leather shoes and slides brand — browse, pick your style, and checkout.</p>
-          </a>
-
-          <a class="card card--project" href="/work/receiptvault.html">
-            <div class="card__thumb">
-              <!-- TO FILL: /assets/work/receiptvault/screen-1-hero -->
-              <div class="media-placeholder">ReceiptVault thumbnail — TO FILL</div>
-            </div>
-            <span class="pill">Collaborative</span>
-            <h3>ReceiptVault</h3>
-            <p>A mobile expense tracking app built for Nigerian SMEs and freelancers, entering an uncontested gap in the local market.</p>
+            <p>Multi-page consulting site for a Lagos finance and analytics firm, designed to build credibility and generate leads.</p>
           </a>
 
           <a class="card card--project" href="/work/mikhiyah.html">
             <div class="card__thumb">
-              <!-- TO FILL: /assets/work/mikhiyah/screen-1 -->
-              <div class="media-placeholder">Mikhiyah thumbnail — TO FILL</div>
+              <video src="/assets/work/mikhiyah/Video%201.mp4" muted autoplay loop playsinline></video>
             </div>
-            <span class="pill">Collaborative</span>
+            <span class="pill pill--status">Collaborative</span>
             <h3>Mikhiyah</h3>
             <p>Website for a mental wellness and community support organization.</p>
           </a>
 
+          <a class="card card--project" href="/work/receiptvault.html">
+            <div class="card__thumb">
+              <img src="/assets/work/receiptvault/receipt%20vault%20mockup%201.svg" alt="ReceiptVault app screen" loading="lazy" />
+            </div>
+            <span class="pill pill--status">Collaborative</span>
+            <h3>ReceiptVault</h3>
+            <p>Mobile expense tracking app for Nigerian SMEs and freelancers.</p>
+          </a>
+
+          <a class="card card--project" href="/work/ceembee-footies.html">
+            <div class="card__thumb">
+              <img src="/assets/work/ceembee/ceembee%20footies%20mockup.svg" alt="Ceembee Footies homepage" loading="lazy" />
+            </div>
+            <span class="pill pill--status">Solo</span>
+            <h3>Ceembee Footies</h3>
+            <p>Clean, minimal e-commerce for a handmade leather shoes and slides brand.</p>
+          </a>
+
           <a class="card card--project" href="/work/stackit.html">
             <div class="card__thumb">
-              <!-- TO FILL: /assets/work/stackit/screen-1-dashboard -->
-              <div class="media-placeholder">StackIt thumbnail — TO FILL</div>
+              <img src="/assets/work/stackit/stackit%20mockup%202.svg" alt="StackIt dashboard" loading="lazy" />
             </div>
-            <span class="pill">UX Case Study · Concept</span>
+            <span class="pill pill--status">UX Case Study · Concept</span>
             <h3>StackIt</h3>
-            <p>A student-centric fintech concept helping undergraduates build saving habits during school and a financial foundation for life after graduation.</p>
+            <p>Student-centric fintech concept helping undergraduates build saving habits.</p>
           </a>
 
         </div>
@@ -119,23 +170,50 @@
     <section id="how-i-work">
       <div class="container">
         <h2 class="italic-accent">How I Work</h2>
-        <p class="hero__subtext">I turn insights into experiences — researching, designing, and building products that feel effortless and actually ship.</p>
+        <p class="hero__subtext">
+          <span class="hero__subtext-full">I turn insights into experiences: researching, designing, and building products that feel effortless and actually ship.</span>
+          <span class="hero__subtext-compact">I turn insights into experiences, researching, designing, and building products that feel effortless and actually ship.</span>
+        </p>
         <div class="card-grid">
-          <div class="card">
-            <h3>Discover</h3>
-            <p>Understanding the product, the users, and the problem. I dig into what people actually need before a single screen is designed.</p>
+          <div class="card card--step">
+            <svg class="card__border-draw" aria-hidden="true" focusable="false">
+              <rect x="0.5" y="0.5" width="99" height="99" rx="16" ry="16" pathLength="1"></rect>
+            </svg>
+            <div class="card__body">
+              <h3>Discover</h3>
+              <p class="card__desc-full">Understanding the product, the users, and the problem. I dig into what people actually need before a single screen is designed.</p>
+              <p class="card__desc-compact">Understanding the product, users, and the problem before a single screen is designed.</p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Define</h3>
-            <p>Translating research into clear product strategy — user flows, information architecture, and the core experience mapped out before design begins.</p>
+          <div class="card card--step">
+            <svg class="card__border-draw" aria-hidden="true" focusable="false">
+              <rect x="0.5" y="0.5" width="99" height="99" rx="16" ry="16" pathLength="1"></rect>
+            </svg>
+            <div class="card__body">
+              <h3>Define</h3>
+              <p class="card__desc-full">Translating research into clear product strategy: user flows, information architecture, and the core experience mapped out before design begins.</p>
+              <p class="card__desc-compact">Turning research into strategy, mapping user flows and the core experience before design begins.</p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Design</h3>
-            <p>Crafting intuitive interfaces that look intentional and feel effortless. Every screen is considered, from the first tap to the last.</p>
+          <div class="card card--step">
+            <svg class="card__border-draw" aria-hidden="true" focusable="false">
+              <rect x="0.5" y="0.5" width="99" height="99" rx="16" ry="16" pathLength="1"></rect>
+            </svg>
+            <div class="card__body">
+              <h3>Design</h3>
+              <p class="card__desc-full">Crafting intuitive interfaces that look intentional and feel effortless. Every screen is considered, from the first tap to the last.</p>
+              <p class="card__desc-compact">Crafting intuitive interfaces that feel effortless, every screen considered from first tap to last.</p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Build &amp; Ship</h3>
-            <p>Most designers stop at handoff. I go further — using AI-powered tools to build and deploy what I design, end to end, from concept to live product.</p>
+          <div class="card card--step">
+            <svg class="card__border-draw" aria-hidden="true" focusable="false">
+              <rect x="0.5" y="0.5" width="99" height="99" rx="16" ry="16" pathLength="1"></rect>
+            </svg>
+            <div class="card__body">
+              <h3>Build &amp; Ship</h3>
+              <p class="card__desc-full">Most designers stop at handoff. I go further, using AI-powered tools to build and deploy what I design, end to end, from concept to live product.</p>
+              <p class="card__desc-compact">Most designers stop at handoff. I go further, using AI-powered tools to build and ship what I design, end to end.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -144,14 +222,90 @@
     <!-- About -->
     <section id="about">
       <div class="container about__layout">
-        <div>
+        <div class="about__text">
           <p class="hero__greeting">Hey, I'm Olayemi 👋</p>
           <h2>A product designer who designs with intention and builds with purpose.</h2>
-          <p>I'm a freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I explore how people interact with technology to create experiences that feel effortless and human. Most designers hand off to developers — I go further, using AI-powered tools to ship what I design, end to end. I've built verified marketplaces, consulting websites, mobile apps, and e-commerce experiences — all from concept to live product. If you need someone who understands both the experience and the execution, that's exactly what I do.</p>
+          <p class="about__text-full">I'm a freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I explore how people interact with technology to create experiences that feel effortless and human. Most designers hand off to developers. I go further, using AI-powered tools to ship what I design, end to end. I've built verified marketplaces, consulting websites, mobile apps, and e-commerce experiences, all from concept to live product. If you need someone who understands both the experience and the execution, that's exactly what I do.</p>
+          <p class="about__text-compact">I'm a freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups, crafting experiences that feel effortless and human. Most designers stop at handoff. I go further, using AI-powered tools to build and ship what I design, end to end, from marketplaces to mobile apps and e-commerce. That means I understand both the experience and the execution.</p>
+          <a href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" class="button button--pill" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
         </div>
-        <div class="media-placeholder">
-          <!-- TO FILL: /assets/about/pearl-photo -->
-          Photo — TO FILL
+        <div class="about__image-frame">
+          <img src="/assets/about/About%20us%20pic%202%20svg.svg" alt="Photo of Olayemi" class="about__image" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+      <div class="marquee">
+        <div class="marquee__track">
+          <div class="card testimonial-card">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi built our Ceembee Footies website exactly as envisioned. Fast, user-friendly, and simple to use."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Olayemi built our Ceembee Footies site exactly as envisioned: fast and easy to use."</p>
+            <p class="testimonial-card__attribution eyebrow">Olaide Okedele, Business Owner</p>
+          </div>
+
+          <div class="card testimonial-card">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi gave BizCore Consulting a professional website and full control to manage it ourselves."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Olayemi gave BizCore Consulting a professional site and full control to manage it ourselves."</p>
+            <p class="testimonial-card__attribution eyebrow">Simisola Olayinka, Principal Consultant</p>
+          </div>
+
+          <div class="card testimonial-card">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi was dedicated, skilled, and a pleasure to work with on Mikhiyah. As fellow designers, we pushed each other to get every detail right."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Seamless to work with: dedicated, skilled, and a pleasure to collaborate with."</p>
+            <p class="testimonial-card__attribution eyebrow">Grace Egba, Product Designer</p>
+          </div>
+
+          <div class="card testimonial-card">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"On ReceiptVault, Olayemi prioritized ease of use, building every feature with the user in mind."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"A designer who genuinely prioritizes ease of use, with top-notch dedication to the craft."</p>
+            <p class="testimonial-card__attribution eyebrow">Anuoluwapo Adeleye, Product Designer</p>
+          </div>
+
+          <div class="card testimonial-card">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi found a broken contact form quietly killing our leads at PayRep and XchangeBox."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Olayemi found a broken contact form quietly killing our leads at PayRep and XchangeBox."</p>
+            <p class="testimonial-card__attribution eyebrow">Abiola Jimoh, Co-Founder, PayRep &amp; XchangeBox</p>
+          </div>
+
+          <div class="card testimonial-card">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi turned my rough ideas into a gorgeous, functional website that captures my brand perfectly."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Olayemi captured my brand in a beautiful, functional website."</p>
+            <p class="testimonial-card__attribution eyebrow">Ayodele Ebenezer, Co-founder, Everiithing.com</p>
+          </div>
+
+          <!-- Duplicate set below for a seamless infinite loop; hidden from assistive tech to avoid repeated announcements -->
+          <div class="card testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi built our Ceembee Footies website exactly as envisioned. Fast, user-friendly, and simple to use."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Olayemi built our Ceembee Footies site exactly as envisioned: fast and easy to use."</p>
+            <p class="testimonial-card__attribution eyebrow">Olaide Okedele, Business Owner</p>
+          </div>
+          <div class="card testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi gave BizCore Consulting a professional website and full control to manage it ourselves."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Olayemi gave BizCore Consulting a professional site and full control to manage it ourselves."</p>
+            <p class="testimonial-card__attribution eyebrow">Simisola Olayinka, Principal Consultant</p>
+          </div>
+          <div class="card testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi was dedicated, skilled, and a pleasure to work with on Mikhiyah. As fellow designers, we pushed each other to get every detail right."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Seamless to work with: dedicated, skilled, and a pleasure to collaborate with."</p>
+            <p class="testimonial-card__attribution eyebrow">Grace Egba, Product Designer</p>
+          </div>
+          <div class="card testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"On ReceiptVault, Olayemi prioritized ease of use, building every feature with the user in mind."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"A designer who genuinely prioritizes ease of use, with top-notch dedication to the craft."</p>
+            <p class="testimonial-card__attribution eyebrow">Anuoluwapo Adeleye, Product Designer</p>
+          </div>
+          <div class="card testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi found a broken contact form quietly killing our leads at PayRep and XchangeBox."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Olayemi found a broken contact form quietly killing our leads at PayRep and XchangeBox."</p>
+            <p class="testimonial-card__attribution eyebrow">Abiola Jimoh, Co-Founder, PayRep &amp; XchangeBox</p>
+          </div>
+          <div class="card testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--full">"Olayemi turned my rough ideas into a gorgeous, functional website that captures my brand perfectly."</p>
+            <p class="testimonial-card__quote italic-accent testimonial-card__quote--compact">"Olayemi captured my brand in a beautiful, functional website."</p>
+            <p class="testimonial-card__attribution eyebrow">Ayodele Ebenezer, Co-founder, Everiithing.com</p>
+          </div>
         </div>
       </div>
     </section>
@@ -159,13 +313,138 @@
     <!-- Contact / CTA -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Got a product to build? Let's talk.</h2>
-        <a class="button" href="mailto:pearlyport9@gmail.com">Email me</a>
-        <div class="contact__socials">
-          <!-- Icons only, no text labels — Pearl to embed real links/icons herself -->
-          <a href="#" aria-label="LinkedIn" class="pill">LinkedIn — TO FILL</a>
-          <a href="mailto:pearlyport9@gmail.com" aria-label="Gmail" class="pill">Gmail</a>
-          <a href="#" aria-label="X (Twitter)" class="pill">X — TO FILL</a>
+        <h2 class="italic-accent">Say hey.</h2>
+        <p class="contact__subtext contact__subtext-full">Book a slot on my calendar, or send over your project details. I respond to every request within 24 hours.</p>
+        <p class="contact__subtext contact__subtext-compact">Book a call or send details.</p>
+
+        <div class="contact__toggle" role="tablist" aria-label="Get in touch">
+          <button type="button" class="contact__tab is-active" role="tab" id="contact-tab-call" aria-selected="true" aria-controls="contact-panel-call">Book a call</button>
+          <button type="button" class="contact__tab" role="tab" id="contact-tab-brief" aria-selected="false" aria-controls="contact-panel-brief" tabindex="-1">Send project details</button>
+        </div>
+
+        <div class="contact__panel" id="contact-panel-call" role="tabpanel" aria-labelledby="contact-tab-call">
+          <div class="contact__cal-wrap">
+            <div id="cal-inline-30min" class="contact__cal-embed" aria-label="Book a 30 minute call with Olayemi"></div>
+          </div>
+        </div>
+
+        <!-- Cal.com official inline embed, replaces a raw <iframe src="..."> because the
+             plain iframe embed didn't reliably register taps on the date/time buttons on
+             mobile. This is cal.com's own loader snippet (self-hosted at cal.eu), which
+             handles cross-frame touch/click events and responsive sizing itself. -->
+        <script type="text/javascript">
+          (function (C, A, L) {
+            let p = function (a, ar) { a.q.push(ar); };
+            let d = C.document;
+            C.Cal = C.Cal || function () {
+              let cal = C.Cal;
+              let ar = arguments;
+              if (!cal.loaded) {
+                cal.ns = {};
+                cal.q = cal.q || [];
+                d.head.appendChild(d.createElement("script")).src = A;
+                cal.loaded = true;
+              }
+              if (ar[0] === L) {
+                const api = function () { p(api, arguments); };
+                const namespace = ar[1];
+                api.q = api.q || [];
+                if (typeof namespace === "string") {
+                  cal.ns[namespace] = cal.ns[namespace] || api;
+                  p(cal.ns[namespace], ar);
+                  p(cal, ["initNamespace", namespace]);
+                } else p(cal, ar);
+                return;
+              }
+              p(cal, ar);
+            };
+          })(window, "https://cal.eu/embed/embed.js", "init");
+
+          Cal("init", "30min", { origin: "https://cal.eu" });
+
+          Cal.ns["30min"]("inline", {
+            elementOrSelector: "#cal-inline-30min",
+            config: { layout: "month_view" },
+            calLink: "olayemi-gnwhh0/30min",
+          });
+
+          Cal.ns["30min"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
+        </script>
+
+        <div class="contact__panel" id="contact-panel-brief" role="tabpanel" aria-labelledby="contact-tab-brief" hidden>
+          <form class="contact__form contact__form--brief" action="https://formspree.io/f/xdarwvzz" method="POST">
+            <input type="hidden" name="_subject" value="New project brief" />
+
+            <div class="contact__form-body">
+              <div class="contact__form-fields">
+                <div>
+                  <label class="contact__label" for="brief-name">Your name</label>
+                  <input class="contact__input" type="text" name="name" id="brief-name" required />
+                </div>
+                <div>
+                  <label class="contact__label" for="brief-email">Work email</label>
+                  <input class="contact__input" type="email" name="email" id="brief-email" required />
+                </div>
+              </div>
+
+              <fieldset class="contact__project-types">
+                <legend class="eyebrow">What do you need help with?</legend>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Product design" />
+                  Product design
+                </label>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Design systems" />
+                  Design systems
+                </label>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Website design" />
+                  Website design
+                </label>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Add-ons" />
+                  Add-ons
+                </label>
+                <label class="pill-select">
+                  <input type="checkbox" name="need[]" value="Ongoing design support" />
+                  Ongoing design support
+                </label>
+              </fieldset>
+
+              <div class="contact__form-fields">
+                <div>
+                  <label class="contact__label" for="brief-budget">What's your budget?</label>
+                  <select class="contact__input" name="budget" id="brief-budget" required>
+                    <option value="" disabled selected>Select a range</option>
+                    <option value="Under $1,000">Under $1,000</option>
+                    <option value="$1,000 – $3,000">$1,000 – $3,000</option>
+                    <option value="$3,000 – $7,000">$3,000 – $7,000</option>
+                    <option value="$7,000+">$7,000+</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="contact__label" for="brief-timeline">What's your timeline?</label>
+                  <select class="contact__input" name="timeline" id="brief-timeline" required>
+                    <option value="" disabled selected>Select a timeline</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="1–2 weeks">1–2 weeks</option>
+                    <option value="1 month">1 month</option>
+                    <option value="1–3 months">1–3 months</option>
+                    <option value="Flexible / just exploring">Flexible / just exploring</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="contact__label" for="brief-message">Anything else?</label>
+                  <textarea class="contact__input contact__textarea" name="message" id="brief-message" rows="4"></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="button button--pill">Send project details</button>
+            </div>
+
+            <p class="contact__confirmation" role="status" hidden>Thanks! I'll get back to you within 24 hours.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -174,10 +453,20 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>I'm Olayemi Oluwatominiyi — Product Designer (UI/UX) based in Nigeria, designing for fintechs, SaaS, and startups. Building something? Let's talk.</p>
-      <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+      <div class="site-footer__info">
+        <a href="mailto:pearlyport9@gmail.com" class="site-footer__email">pearlyport9@gmail.com</a>
+        <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+        <p class="site-footer__clock"></p>
+      </div>
+      <div class="site-footer__socials">
+        <a href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/pearlgrid?s=11" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://github.com/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">Resume</a>
+      </div>
     </div>
   </footer>
 
+  <script src="scripts/main.js"></script>
 </body>
 </html>

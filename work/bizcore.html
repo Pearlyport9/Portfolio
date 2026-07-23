@@ -3,41 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BIZCORE Consulting Website — Lead Generation Design | Olayemi Oluwatominiyi</title>
+  <title>BIZCORE Consulting — Lead Gen Website | Olayemi</title>
   <meta name="description" content="A multi-page consulting website for a Lagos-based finance and data analytics firm, designed to build credibility and convert visitors into consultation bookings." />
-  <meta property="og:title" content="BIZCORE Consulting Website — Lead Generation Design | Olayemi Oluwatominiyi" />
+  <link rel="canonical" href="https://olayemi-portfolio.vercel.app/work/bizcore.html" />
+  <meta property="og:title" content="BIZCORE Consulting — Lead Gen Website | Olayemi" />
   <meta property="og:description" content="A multi-page consulting website for a Lagos-based finance and data analytics firm, designed to build credibility and convert visitors into consultation bookings." />
+  <meta property="og:url" content="https://olayemi-portfolio.vercel.app/work/bizcore.html" />
+  <meta property="og:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Olayemi Oluwatominiyi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BIZCORE Consulting — Lead Gen Website | Olayemi" />
+  <meta name="twitter:description" content="A multi-page consulting website for a Lagos-based finance and data analytics firm, designed to build credibility and convert visitors into consultation bookings." />
+  <meta name="twitter:image" content="https://olayemi-portfolio.vercel.app/assets/og-image.png" />
   <link rel="stylesheet" href="/styles/color-tokens.css" />
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/main.css" />
 </head>
-<body>
+<body class="page-bizcore">
 
-  <header class="site-nav">
+  <header class="site-nav site-nav--mobile-glass">
     <div class="container">
       <a href="/index.html" class="site-nav__brand">Olayemi</a>
       <nav aria-label="Primary">
         <ul class="site-nav__links">
           <li><a href="/index.html#work">Work</a></li>
           <li><a href="/about.html">About</a></li>
-          <li><a href="/index.html#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
         </ul>
       </nav>
-      <span class="pill pill--availability">🟢 Available for New Projects</span>
+      <a href="/contact.html#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
+
+    <div class="site-nav__float">
+      <a href="/index.html" class="site-nav__float-brand">Olayemi</a>
+      <button type="button" class="site-nav__float-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+        <span class="site-nav__float-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav__panel" id="mobile-nav-panel" aria-label="Primary mobile" hidden>
+      <button type="button" class="site-nav__panel-close" aria-label="Close menu">
+        <span class="site-nav__panel-close-icon" aria-hidden="true"></span>
+      </button>
+      <ul>
+        <li><a href="/index.html#work">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
     <section class="case-study-hero">
       <div class="container">
         <div class="case-study-hero__meta">
-          <span class="pill">Solo</span>
+          <span class="pill pill--status">Solo</span>
         </div>
         <h1>BIZCORE Consulting</h1>
         <p class="hero__subtext">A multi-page consulting website for a Lagos-based finance, market research, and data analytics consultancy, designed to build credibility and generate client leads.</p>
-        <div class="media-placeholder">
-          <!-- TO FILL: /assets/work/bizcore/hero-video (.mp4/.webm, autoplay muted looped) -->
-          Hero video — TO FILL
+        <div class="case-study-hero__media">
+          <video src="/assets/work/bizcore/Video%202%20(2).mp4" muted autoplay loop playsinline></video>
         </div>
       </div>
     </section>
@@ -45,20 +73,34 @@
     <section class="case-study-section">
       <div class="container">
         <h2>Problem</h2>
-        <p>BIZCORE needed to showcase its expertise across finance, market research, and data analytics to a mixed audience of startup founders, SME owners, investors, and business professionals — while presenting services clearly enough to convert visitors into consultation bookings, and credibly enough to support investor-facing branding.</p>
+        <div class="case-study-editorial case-study-editorial--top">
+          <div class="case-study-editorial__media case-study-editorial__media--short">
+            <img src="/assets/work/bizcore/Bizcore%20Problem%20Pic.svg" alt="The credibility gap BIZCORE needed to close for finance and consulting clients" loading="lazy" />
+          </div>
+          <div class="case-study-editorial__content">
+            <p>BIZCORE needed to showcase its expertise across finance, market research, and data analytics to a mixed audience of startup founders, SME owners, investors, and business professionals, while presenting services clearly enough to convert visitors into consultation bookings, and credibly enough to support investor-facing branding. Without a live site, the firm had no way to be found or vetted online, and no consistent way to explain five distinct service lines to visitors arriving with very different levels of financial literacy. Prospective clients had no consistent point of reference before a first call: no way to review past work, compare service offerings, or gauge credibility against other consultancies, which left the sales process leaning entirely on referrals and cold outreach rather than inbound trust.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="case-study-section">
       <div class="container">
         <h2>Solution / Process</h2>
-        <ul>
-          <li>Designed and built solo with a clean, minimalist, corporate visual direction — geometric growth and financial imagery to reinforce trust and authority.</li>
-          <li>Structured the site around BIZCORE's five core services: Financial Planning &amp; FP&amp;A, Market Research &amp; Business Strategy, Data Analytics &amp; Performance Intelligence, Investment Advisory/Pitch Deck Creation, and Business Development Strategy.</li>
-          <li>Designed a hero around the brand slogan "Structured Finance. Sustainable Growth." with a clear "Book a Consultation" CTA repeated across pages.</li>
-          <li>Built features: hero slider, bento-grid services layout, blog with easy non-technical content updates, and an admin dashboard.</li>
-          <li>Designed for lead generation as the core functional goal — consultation request form, CTA buttons on every page, social/contact links.</li>
-        </ul>
+        <div class="case-study-editorial case-study-editorial--reverse">
+          <div class="case-study-editorial__media case-study-editorial__media--short">
+            <img src="/assets/work/bizcore/side-view-businesswoman-showing-analytical-charts-her-male-coworker%201.svg" alt="BIZCORE's data-driven, credibility-first approach to client presentations" loading="lazy" />
+          </div>
+          <div class="case-study-editorial__content">
+            <ul>
+              <li>Designed and built solo with a clean, minimalist, corporate visual direction: geometric growth and financial imagery to reinforce trust and authority.</li>
+              <li>Structured the site around BIZCORE's five core services: Financial Planning &amp; FP&amp;A, Market Research &amp; Business Strategy, Data Analytics &amp; Performance Intelligence, Investment Advisory/Pitch Deck Creation, and Business Development Strategy.</li>
+              <li>Designed a hero around the brand slogan "Structured Finance. Sustainable Growth." with a clear "Book a Consultation" CTA repeated across pages.</li>
+              <li>Built features: hero slider, bento-grid services layout, blog with easy non-technical content updates, and an admin dashboard.</li>
+              <li>Designed for lead generation as the core functional goal: consultation request form, CTA buttons on every page, social/contact links.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -66,21 +108,7 @@
       <div class="container">
         <h2>Outcome</h2>
         <p>Delivered as a complete client project. BIZCORE Consulting is live, presenting its services and generating consultation leads across its target audience of founders, SMEs, and investors.</p>
-        <p><a class="button button--outline" href="https://bizcore-consulting-7v8d.vercel.app/" target="_blank" rel="noopener">View live site →</a></p>
-      </div>
-    </section>
-
-    <section class="case-study-section">
-      <div class="container">
-        <h2>Screens</h2>
-        <div class="case-study-gallery">
-          <!-- TO FILL: /assets/work/bizcore/screen-1-hero -->
-          <div class="media-placeholder">Hero slider view — TO FILL</div>
-          <!-- TO FILL: /assets/work/bizcore/screen-2-services -->
-          <div class="media-placeholder">Bento-grid services section — TO FILL</div>
-          <!-- TO FILL: /assets/work/bizcore/screen-3-blog -->
-          <div class="media-placeholder">Blog / contact page — TO FILL</div>
-        </div>
+        <p><a class="button button--pill" href="https://bizcore-consulting-7v8d.vercel.app/" target="_blank" rel="noopener">View live site →</a></p>
       </div>
     </section>
 
@@ -88,14 +116,36 @@
       <a href="/work/everiithing.html">← Everiithing</a>
       <a href="/work/ceembee-footies.html">Next: Ceembee Footies →</a>
     </nav>
+
+    <section class="case-study-cta">
+      <div class="container case-study-cta__layout">
+        <div class="case-study-cta__image-frame">
+          <img src="/assets/about/About%20us%20pic%202%20svg.svg" alt="Photo of Olayemi" class="case-study-cta__image" loading="lazy" />
+        </div>
+        <div class="case-study-cta__text">
+          <h2 class="italic-accent">Got a product to build? Let's talk.</h2>
+          <a class="button button--pill" href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>I'm Olayemi Oluwatominiyi — Product Designer (UI/UX) based in Nigeria, designing for fintechs, SaaS, and startups. Building something? Let's talk.</p>
-      <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+      <div class="site-footer__info">
+        <a href="mailto:pearlyport9@gmail.com" class="site-footer__email">pearlyport9@gmail.com</a>
+        <p>&copy; 2026 Olayemi Oluwatominiyi. All rights reserved.</p>
+        <p class="site-footer__clock"></p>
+      </div>
+      <div class="site-footer__socials">
+        <a href="https://www.linkedin.com/in/olayemi-oluwatominiyi-uiux-ai-270571364" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/pearlgrid?s=11" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://github.com/" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" class="site-footer__social-link" target="_blank" rel="noopener noreferrer">Resume</a>
+      </div>
     </div>
   </footer>
 
+  <script src="/scripts/main.js"></script>
 </body>
 </html>

@@ -97,4 +97,9 @@
   --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
 
   --content-max-width: 1200px;
+
+  /* --color-accent / --color-accent-hover now come from color-tokens.css,
+     generated from color.key.accent/accentHover in color-tokens.json. */
+  --color-accent-tint: color-mix(in srgb, var(--color-accent) 28%, var(--color-cream));
+  --color-card-bg: hsl(15, 55%, 30%);
 }

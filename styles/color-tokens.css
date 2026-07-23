@@ -2,49 +2,56 @@
  * Auto-generated from color-tokens.json by generate-tokens.js.
  * Do not edit directly — re-run `node generate-tokens.js` instead.
  *
- * Gold/cream/dark-brown are sourced directly from color.key.primary/
- * secondary/tertiary in color-tokens.json (not hardcoded here). Text-muted,
- * border, and link-hover are not present in color-tokens.json and are taken
- * from design-tokens.md as declared fallbacks.
+ * Gold/cream/dark-brown/accent are sourced directly from color.key.primary/
+ * secondary/tertiary/accent/accentHover in color-tokens.json (not hardcoded
+ * here). Text-muted, border, and link-hover are not present in
+ * color-tokens.json and are declared fallbacks maintained directly in this
+ * script.
  */
 
 :root {
   --color-gold: hsl(44, 74%, 31%);
-  --color-cream: hsl(45, 51%, 86%);
+  --color-cream: hsl(43, 73%, 90%);
   --color-bg-dark: hsl(42, 68%, 10%);
-  --color-background: hsl(45, 51%, 86%);
-  --color-surface: hsl(45, 51%, 86%);
+  --color-background: hsl(39, 100%, 97%);
+  --color-surface: hsl(43, 73%, 90%);
   --color-text-primary: #1A1A1A;
-  --color-text-on-dark: hsl(45, 51%, 86%);
+  --color-text-on-dark: hsl(43, 73%, 90%);
   --color-text-muted: #6B6B6B;
   --color-border: #E5E0D8;
   --color-link-hover: #A8842A;
+  --color-accent: hsl(12, 74%, 53%);
+  --color-accent-hover: hsl(10, 69%, 47%);
 }
 
 [data-theme="dark"] {
   --color-gold: hsl(44, 74%, 31%);
-  --color-cream: hsl(45, 51%, 86%);
+  --color-cream: hsl(43, 73%, 90%);
   --color-bg-dark: hsl(42, 68%, 10%);
   --color-background: hsl(42, 68%, 10%);
   --color-surface: hsl(42, 68%, 10%);
-  --color-text-primary: hsl(45, 51%, 86%);
-  --color-text-on-dark: hsl(45, 51%, 86%);
+  --color-text-primary: hsl(43, 73%, 90%);
+  --color-text-on-dark: hsl(43, 73%, 90%);
   --color-text-muted: #6B6B6B;
   --color-border: #E5E0D8;
   --color-link-hover: #A8842A;
+  --color-accent: hsl(12, 74%, 53%);
+  --color-accent-hover: hsl(10, 69%, 47%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --color-gold: hsl(44, 74%, 31%);
-    --color-cream: hsl(45, 51%, 86%);
+    --color-cream: hsl(43, 73%, 90%);
     --color-bg-dark: hsl(42, 68%, 10%);
     --color-background: hsl(42, 68%, 10%);
     --color-surface: hsl(42, 68%, 10%);
-    --color-text-primary: hsl(45, 51%, 86%);
-    --color-text-on-dark: hsl(45, 51%, 86%);
+    --color-text-primary: hsl(43, 73%, 90%);
+    --color-text-on-dark: hsl(43, 73%, 90%);
     --color-text-muted: #6B6B6B;
     --color-border: #E5E0D8;
     --color-link-hover: #A8842A;
+    --color-accent: hsl(12, 74%, 53%);
+    --color-accent-hover: hsl(10, 69%, 47%);
   }
 }

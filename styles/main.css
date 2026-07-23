@@ -10,6 +10,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -48,12 +54,12 @@ a:hover {
 }
 
 section {
-  padding-block: var(--space-2xl);
+  padding-block: var(--space-lg);
 }
 
 @media (min-width: 1024px) {
   section {
-    padding-block: var(--space-3xl);
+    padding-block: var(--space-xl);
   }
 }
 
@@ -64,6 +70,18 @@ h3 {
   font-weight: var(--fw-medium);
   line-height: var(--lh-tight);
   margin: 0 0 var(--space-sm);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
 }
 
 .eyebrow {
@@ -89,11 +107,41 @@ h3 {
   border: 1px solid var(--color-border);
   font-size: var(--fs-small);
   font-weight: var(--fw-medium);
+  transition: all 0.2s ease;
+}
+
+a.pill:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-cream);
+  box-shadow: var(--shadow-soft);
 }
 
 .pill--availability {
-  border-color: var(--color-gold);
-  color: var(--color-text-primary);
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: white;
+}
+
+a.pill--availability:hover,
+.pill--availability:hover {
+  border-color: var(--color-accent-hover);
+  background: var(--color-accent-hover);
+  color: white;
+  transform: scale(1.04);
+}
+
+.pill--availability:active {
+  transform: scale(0.96);
+}
+
+/* Status/role tag pills (e.g. "Solo", "Collaborative") — a light tint of the
+   accent rather than the solid CTA color, so they read as informational
+   labels rather than clickable actions. */
+.pill--status {
+  border-color: transparent;
+  background: var(--color-accent-tint);
+  color: var(--color-accent-hover);
 }
 
 /* Nav */
@@ -101,8 +149,8 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-cream);
+  color: var(--color-text-primary);
 }
 
 .site-nav .container {
@@ -122,15 +170,559 @@ h3 {
   padding: 0;
 }
 
+.site-nav__links a {
+  transition: color 0.2s ease;
+}
+
+.site-nav__links a:hover {
+  color: var(--color-accent-hover);
+}
+
 .site-nav__brand {
   font-family: var(--font-display);
   font-size: var(--fs-h3);
   font-weight: var(--fw-semibold);
+  transition: color 0.2s ease;
+}
+
+.site-nav__brand:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Mobile floating "glass" nav — preview scoped to .site-nav--mobile-glass
+   (index.html only) so other pages' shared .site-nav markup is unaffected. */
+.site-nav--mobile-glass .site-nav__float,
+.site-nav--mobile-glass .site-nav__panel {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .site-nav--mobile-glass .container {
+    display: none;
+  }
+
+  .site-nav--mobile-glass {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .site-nav--mobile-glass .site-nav__float {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin: var(--space-sm) var(--space-md) 0;
+    padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+    pointer-events: auto;
+    background: color-mix(in srgb, var(--color-cream) 55%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid color-mix(in srgb, var(--color-text-primary) 12%, transparent);
+    box-shadow: var(--shadow-soft);
+    border-radius: 999px;
+    color: var(--color-text-primary);
+  }
+
+  .site-nav--mobile-glass .site-nav__float-brand {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    color: var(--color-text-primary);
+    transition: color 0.2s ease;
+  }
+
+  .site-nav--mobile-glass .site-nav__float-brand:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-cream);
+    cursor: pointer;
+    box-shadow:
+      0 1px 2px color-mix(in srgb, var(--color-text-primary) 18%, transparent),
+      0 6px 10px color-mix(in srgb, var(--color-accent) 30%, transparent),
+      0 14px 24px color-mix(in srgb, var(--color-accent) 18%, transparent);
+    transition: background 0.2s ease;
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle:hover,
+  .site-nav--mobile-glass .site-nav__float-toggle[aria-expanded="true"] {
+    background: var(--color-accent-hover);
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle-icon {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle-icon::before,
+  .site-nav--mobile-glass .site-nav__float-toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s ease, top 0.2s ease;
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle-icon::before {
+    top: -6px;
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle-icon::after {
+    top: 6px;
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle[aria-expanded="true"] .site-nav__float-toggle-icon {
+    background: transparent;
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle[aria-expanded="true"] .site-nav__float-toggle-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .site-nav--mobile-glass .site-nav__float-toggle[aria-expanded="true"] .site-nav__float-toggle-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .site-nav--mobile-glass .site-nav__panel {
+    pointer-events: auto;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl) var(--space-md) var(--space-md);
+    background: var(--color-cream);
+    color: var(--color-text-primary);
+    transform: translateY(100%);
+    transition: transform 240ms cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  .site-nav--mobile-glass .site-nav__panel[hidden] {
+    display: none;
+  }
+
+  .site-nav--mobile-glass .site-nav__panel.is-open {
+    transform: translateY(0);
+    transition: transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .site-nav--mobile-glass .site-nav__panel-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-cream);
+    cursor: pointer;
+    box-shadow:
+      0 1px 2px color-mix(in srgb, var(--color-text-primary) 18%, transparent),
+      0 6px 10px color-mix(in srgb, var(--color-accent) 30%, transparent),
+      0 14px 24px color-mix(in srgb, var(--color-accent) 18%, transparent);
+    transition: background 0.2s ease;
+  }
+
+  .site-nav--mobile-glass .site-nav__panel-close:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .site-nav--mobile-glass .site-nav__panel-close-icon {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 2px;
+  }
+
+  .site-nav--mobile-glass .site-nav__panel-close-icon::before,
+  .site-nav--mobile-glass .site-nav__panel-close-icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+  }
+
+  .site-nav--mobile-glass .site-nav__panel-close-icon::before {
+    transform: rotate(45deg);
+  }
+
+  .site-nav--mobile-glass .site-nav__panel-close-icon::after {
+    transform: rotate(-45deg);
+  }
+
+  .site-nav--mobile-glass .site-nav__panel ul {
+    list-style: none;
+    margin: var(--space-lg) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .site-nav--mobile-glass .site-nav__panel a {
+    display: block;
+    padding: var(--space-sm) 0.75rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-medium);
+    color: var(--color-text-primary);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav--mobile-glass .site-nav__panel a:hover {
+    background: var(--color-accent-tint);
+    color: var(--color-accent-hover);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav--mobile-glass .site-nav__panel,
+  .site-nav--mobile-glass .site-nav__panel.is-open {
+    transition: none;
+  }
 }
 
 /* Hero */
 .hero {
-  padding-block: var(--space-3xl);
+  padding-block-start: var(--space-xl);
+  padding-block-end: var(--space-lg);
+  text-align: center;
+}
+
+/* Extra clearance under the fixed floating mobile nav (site-nav--mobile-glass
+   removes the header from normal flow, so the hero must reserve its own
+   top space), bumped one step up the existing spacing scale. */
+@media (max-width: 639px) {
+  .site-nav--mobile-glass ~ main .hero,
+  .site-nav--mobile-glass ~ main .contact,
+  .site-nav--mobile-glass ~ main #about {
+    padding-block-start: var(--space-2xl);
+  }
+
+  .hero {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: var(--space-xl);
+  }
+}
+
+/* Typewriter reveal for the mobile hero headline (see scripts/main.js).
+   Characters are pre-rendered in the DOM and only toggle opacity, so word
+   wrap is fixed from first paint and the reveal never causes layout shift. */
+.hero__headline .tw-char {
+  opacity: 0;
+  transition: opacity 0.03s linear;
+}
+
+.hero__headline .tw-char.is-visible {
+  opacity: 1;
+}
+
+.hero__headline .tw-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  margin-left: 2px;
+  background: currentColor;
+  vertical-align: text-bottom;
+  animation: tw-cursor-blink 1s steps(1) infinite;
+}
+
+@keyframes tw-cursor-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Services */
+.services {
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: var(--space-sm);
+  max-width: 600px;
+  margin-inline: auto;
+  justify-content: center;
+}
+
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  padding: var(--space-sm) var(--space-md);
+  background: white;
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-lg);
+  gap: var(--space-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  cursor: default;
+}
+
+.service-pill:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-gold) 15%, transparent);
+  background: color-mix(in srgb, var(--color-gold) 5%, white);
+}
+
+.service-pill__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-dark);
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.service-pill:hover .service-pill__icon {
+  transform: rotate(10deg);
+}
+
+.service-pill__label {
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+}
+
+/* Desktop sizing (height, icon, padding) is oversized relative to a mobile
+   viewport — scale it down using the existing spacing/type tokens rather
+   than one-off values, so pill density roughly matches the desktop version's
+   proportion to its own viewport. */
+@media (max-width: 639px) {
+  .service-pill {
+    height: auto;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .service-pill__icon {
+    width: var(--space-md);
+    height: var(--space-md);
+    font-size: var(--fs-small);
+  }
+
+  .service-pill__label {
+    font-size: var(--fs-small);
+  }
+}
+
+/* Scroll-triggered reveal — hidden state only applies once JS confirms it can animate it in.
+   Gated on :not(.is-visible) rather than a static override, so once revealed there's nothing
+   left in the cascade to fight the :hover transform transition below. */
+.services.js-reveal-ready h2:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.services.js-reveal-ready h2.is-visible {
+  animation: services-fade-up 0.6s ease-out forwards;
+}
+
+/* Once the reveal animation finishes, drop it so :hover can transition transform again
+   (a forwards-filling animation otherwise keeps overriding the property indefinitely) */
+.services.js-reveal-ready h2.reveal-settled {
+  animation: none;
+}
+
+@keyframes services-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services.js-reveal-ready h2 {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Skill-pill entrance — separate system from the h2 reveal above because this
+   one replays every time the grid re-enters the viewport (JS toggles
+   .pills-reveal-ready/.is-entering/.reveal-settled on each intersection
+   change), not just once on first scroll-in. Rows are pill 1+2, 3+4, 5+6 in
+   DOM order; left column = odd, right column = even. */
+.services__grid.pills-reveal-ready .service-pill {
+  opacity: 0;
+}
+
+.services__grid.pills-reveal-ready .service-pill:nth-child(odd).is-entering {
+  animation: pill-enter-left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.services__grid.pills-reveal-ready .service-pill:nth-child(even).is-entering {
+  animation: pill-enter-right 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.services__grid.pills-reveal-ready .service-pill:nth-child(3).is-entering,
+.services__grid.pills-reveal-ready .service-pill:nth-child(4).is-entering {
+  animation-delay: 0.15s;
+}
+
+.services__grid.pills-reveal-ready .service-pill:nth-child(5).is-entering,
+.services__grid.pills-reveal-ready .service-pill:nth-child(6).is-entering {
+  animation-delay: 0.3s;
+}
+
+/* JS removes .is-entering the moment it adds .reveal-settled (on
+   animationend), so this rule is never fighting the .is-entering rules above
+   for the same element — same "free up :hover's transform transition"
+   reasoning as the h2 reveal-settled rule. */
+.services__grid.pills-reveal-ready .service-pill.reveal-settled {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes pill-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-120px) rotate(-18deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes pill-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(120px) rotate(18deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* Mobile: same choreography, shorter throw and less rotation so the pills
+   settle instead of launching in, plus wider row delays so rows read as
+   sequential rather than three overlapping bursts. */
+@media (max-width: 639px) {
+  .services__grid.pills-reveal-ready .service-pill:nth-child(odd).is-entering {
+    animation-name: pill-enter-left-mobile;
+    animation-duration: 0.55s;
+  }
+
+  .services__grid.pills-reveal-ready .service-pill:nth-child(even).is-entering {
+    animation-name: pill-enter-right-mobile;
+    animation-duration: 0.55s;
+  }
+
+  .services__grid.pills-reveal-ready .service-pill:nth-child(3).is-entering,
+  .services__grid.pills-reveal-ready .service-pill:nth-child(4).is-entering {
+    animation-delay: 0.22s;
+  }
+
+  .services__grid.pills-reveal-ready .service-pill:nth-child(5).is-entering,
+  .services__grid.pills-reveal-ready .service-pill:nth-child(6).is-entering {
+    animation-delay: 0.44s;
+  }
+
+  @keyframes pill-enter-left-mobile {
+    from {
+      opacity: 0;
+      transform: translateX(-50px) rotate(-8deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) rotate(0deg);
+    }
+  }
+
+  @keyframes pill-enter-right-mobile {
+    from {
+      opacity: 0;
+      transform: translateX(50px) rotate(8deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) rotate(0deg);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services__grid.pills-reveal-ready .service-pill {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Placed after the base rule above so it wins the cascade tie: same
+   selector/specificity, and a media-scoped rule earlier in the file does
+   not out-rank an unscoped one declared later. */
+@media (max-width: 639px) {
+  .hero .container {
+    align-items: flex-start;
+  }
+}
+
+.hero .hero__greeting {
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
 }
 
 .hero__greeting {
@@ -138,16 +730,10 @@ h3 {
   margin-bottom: var(--space-sm);
 }
 
-.hero__pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-md);
-}
-
 .hero__headline {
   font-size: var(--fs-hero);
   max-width: 20ch;
+  margin-bottom: var(--space-xs);
 }
 
 .hero__subtext {
@@ -160,6 +746,15 @@ h3 {
   margin-bottom: var(--space-lg);
 }
 
+.hero .hero__subtext {
+  margin-top: 0;
+}
+
+.button.hero__cta {
+  border-radius: 999px;
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
 /* Buttons */
 .button {
   display: inline-flex;
@@ -169,19 +764,43 @@ h3 {
   border-radius: var(--radius-md);
   font-family: var(--font-body);
   font-weight: var(--fw-medium);
-  border: 1px solid var(--color-gold);
-  background: var(--color-gold);
-  color: var(--color-cream);
+  border: 2px solid var(--color-bg-dark);
+  background: var(--color-accent);
+  color: white;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s ease;
 }
 
 .button:hover {
-  background: transparent;
-  color: var(--color-text-primary);
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: white;
+}
+
+.button:active {
+  transform: scale(0.97);
 }
 
 .button--outline {
   background: transparent;
+  border-color: var(--color-accent);
   color: var(--color-text-primary);
+}
+
+.button--outline:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: white;
+}
+
+/* CTA buttons on dark-background sections (e.g. project cards): swap the
+   border to the light on-dark token so it stays visible against the fill
+   and the dark section instead of disappearing into --color-bg-dark. */
+.card--project .button,
+.card--project .button--outline,
+.contact__form .button,
+.contact__form .button--outline {
+  border-color: var(--color-text-on-dark);
 }
 
 /* Card grids */
@@ -200,6 +819,7 @@ h3 {
 @media (min-width: 1024px) {
   .card-grid--work {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--space-md);
   }
 }
 
@@ -210,10 +830,234 @@ h3 {
   border: 1px solid var(--color-border);
 }
 
+.card--persona {
+  background: #773722;
+  border: none;
+  color: var(--color-text-on-dark);
+}
+
+.card--persona .eyebrow {
+  color: var(--color-text-on-dark);
+}
+
+#how-i-work .card {
+  border-color: var(--color-bg-dark);
+  transition: all 0.2s ease;
+}
+
+#how-i-work .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-gold) 20%, transparent);
+  border-color: var(--color-gold);
+}
+
+/* Border draw-in entrance for the Discover/Define/Design step cards: an SVG
+   rect traces the card's outline (pathLength-normalized stroke-dashoffset,
+   see main.js), then the title/description fade in. Each card triggers
+   independently as it enters the viewport, so the real CSS border stays
+   transparent until the trace finishes and hands off to it. */
+#how-i-work .card--step {
+  position: relative;
+  border-color: transparent;
+}
+
+#how-i-work .card--step.is-drawn {
+  border-color: var(--color-bg-dark);
+}
+
+.card__border-draw {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.card__border-draw rect {
+  fill: none;
+  stroke: var(--color-bg-dark);
+  stroke-width: 1px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+#how-i-work .card--step.is-drawing .card__border-draw rect,
+#how-i-work .card--step.is-drawn .card__border-draw rect {
+  stroke-dashoffset: 0;
+}
+
+#how-i-work .card--step.is-drawn .card__border-draw {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#how-i-work .card--step .card__body {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+#how-i-work .card--step.is-drawn .card__body {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #how-i-work .card--step {
+    border-color: var(--color-bg-dark);
+  }
+
+  #how-i-work .card--step .card__border-draw {
+    display: none;
+  }
+
+  #how-i-work .card--step .card__body {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* Two text variants for the "How I Work" subtext: the em dash reads fine at
+   desktop line lengths but breaks awkwardly across the narrower column on
+   mobile, so a comma-joined variant swaps in there instead. */
+#how-i-work .hero__subtext-compact {
+  display: none;
+}
+
+#how-i-work .card__desc-compact {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  #how-i-work .hero__subtext-full {
+    display: none;
+  }
+
+  #how-i-work .hero__subtext-compact {
+    display: inline;
+  }
+
+  #how-i-work .card__desc-full {
+    display: none;
+  }
+
+  #how-i-work .card__desc-compact {
+    display: block;
+  }
+}
+
+/* Scroll-triggered reveal — same pattern as the services and Selected Work sections.
+   Sequence: heading -> subtext -> row 1 (Discover, Define) -> row 2 (Design, Build & Ship),
+   left-column cards slide in from the left, right-column cards from the right. */
+[id="how-i-work"].js-reveal-ready h2:not(.is-visible),
+[id="how-i-work"].js-reveal-ready .hero__subtext:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[id="how-i-work"].js-reveal-ready h2.is-visible {
+  animation: services-fade-up 0.6s ease-out forwards;
+}
+
+[id="how-i-work"].js-reveal-ready .hero__subtext.is-visible {
+  animation: services-fade-up 0.6s ease-out 0.09s forwards;
+}
+
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(odd):not(.is-visible) {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(even):not(.is-visible) {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(odd).is-visible {
+  animation: how-work-fade-left 0.6s ease-out forwards;
+}
+
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(even).is-visible {
+  animation: how-work-fade-right 0.6s ease-out forwards;
+}
+
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(1).is-visible,
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(2).is-visible {
+  animation-delay: 0.18s;
+}
+
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(3).is-visible,
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(4).is-visible {
+  animation-delay: 0.36s;
+}
+
+[id="how-i-work"].js-reveal-ready h2.reveal-settled,
+[id="how-i-work"].js-reveal-ready .hero__subtext.reveal-settled {
+  animation: none;
+}
+
+/* Matches the .card-grid > .card:nth-child(odd/even).is-visible selector shape exactly so this
+   ties (and wins via source order) instead of losing to it on specificity. */
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(odd).reveal-settled,
+[id="how-i-work"].js-reveal-ready .card-grid > .card:nth-child(even).reveal-settled {
+  animation: none;
+}
+
+@keyframes how-work-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes how-work-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [id="how-i-work"].js-reveal-ready h2,
+  [id="how-i-work"].js-reveal-ready .hero__subtext,
+  [id="how-i-work"].js-reveal-ready .card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
 .card--project {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  overflow: hidden;
+  background: var(--color-card-bg);
+  color: var(--color-text-on-dark);
+  border: none;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s ease;
+}
+
+.card--project:hover {
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-gold) 35%, transparent);
+  transform: translateY(-6px);
+  color: var(--color-text-on-dark);
+}
+
+.card--project h3 {
+  transition: opacity 0.2s ease;
+}
+
+.card--project:hover h3 {
+  opacity: 0.85;
 }
 
 .card__thumb {
@@ -221,6 +1065,174 @@ h3 {
   overflow: hidden;
   background: var(--color-border);
   aspect-ratio: 4 / 3;
+}
+
+.card--project .card__thumb {
+  margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) 0;
+  width: calc(100% + 2 * var(--space-md));
+  max-width: none;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  min-height: 280px;
+}
+
+.card--project .card__thumb .media-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: unset;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.card--project .card__thumb img,
+.card--project .card__thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card--project:hover .card__thumb img,
+.card--project:hover .card__thumb video {
+  transform: scale(1.05);
+}
+
+/* Scroll-triggered reveal — same pattern as the services section: hidden state gated on
+   :not(.is-visible) so nothing in the cascade fights the :hover transform above once settled.
+   Sequence: eyebrow -> heading -> cards (left to right), each offset ~90ms. */
+[id="work"].js-reveal-ready .eyebrow:not(.is-visible),
+[id="work"].js-reveal-ready h2:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[id="work"].js-reveal-ready .eyebrow.is-visible,
+[id="work"].js-reveal-ready h2.is-visible {
+  animation: services-fade-up 0.6s ease-out forwards;
+}
+
+[id="work"].js-reveal-ready .eyebrow.is-visible { animation-delay: 0s; }
+[id="work"].js-reveal-ready h2.is-visible { animation-delay: 0.09s; }
+
+[id="work"].js-reveal-ready .card--project:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+[id="work"].js-reveal-ready .card--project.is-visible {
+  animation: card-fade-up 0.6s ease-out forwards;
+}
+
+/* .work-accordion__slot (injected at runtime by setUpWorkAccordion in
+   scripts/main.js) is display:contents, so .card--project is the actual
+   grid item for layout purposes, but it's the *slot* that nth-child needs
+   to count against now that the card is no longer a direct grid child. */
+.card-grid--work .work-accordion__slot:nth-child(1) .card--project.is-visible { animation-delay: 0.18s; }
+.card-grid--work .work-accordion__slot:nth-child(2) .card--project.is-visible { animation-delay: 0.27s; }
+.card-grid--work .work-accordion__slot:nth-child(3) .card--project.is-visible { animation-delay: 0.36s; }
+.card-grid--work .work-accordion__slot:nth-child(4) .card--project.is-visible { animation-delay: 0.45s; }
+.card-grid--work .work-accordion__slot:nth-child(5) .card--project.is-visible { animation-delay: 0.54s; }
+.card-grid--work .work-accordion__slot:nth-child(6) .card--project.is-visible { animation-delay: 0.63s; }
+
+[id="work"].js-reveal-ready .eyebrow.reveal-settled,
+[id="work"].js-reveal-ready h2.reveal-settled,
+[id="work"].js-reveal-ready .card--project.reveal-settled {
+  animation: none;
+}
+
+@keyframes card-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [id="work"].js-reveal-ready .eyebrow,
+  [id="work"].js-reveal-ready h2,
+  [id="work"].js-reveal-ready .card--project {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Collapsing header / accordion (mobile only). setUpWorkAccordion() in
+   scripts/main.js wraps each card in a .work-accordion__slot at load time.
+   The slot's height is fixed once (to the card's own natural height) and
+   never changes again, so the section's total scrollable length stays
+   constant even as content collapses — letting the live card height shrink
+   the *containing block* itself was what caused sticky headers to overlap
+   and release early in an earlier attempt (the section ran out of real
+   scroll room well before later cards got their turn). The slot is the
+   card's containing block: the card sticks within it, pinned just below
+   the floating nav, while its body (thumbnail + description) shrinks in
+   real height as the user scrolls through that card's own slot; once fully
+   collapsed it rides along, still pinned, until the slot ends and the next
+   card's slot begins.
+   flex `gap` can't be selectively animated to 0 for a single child (it's a
+   fixed value between every adjacent pair), so spacing here comes from
+   per-element margins driven by --work-gap instead. All --work-* custom
+   properties are only read inside this media query, so leftover inline
+   values are inert on desktop even before JS resets them on teardown. */
+.work-accordion__slot {
+  display: contents;
+}
+
+@media (max-width: 639px) and (prefers-reduced-motion: no-preference) {
+  .card-grid--work {
+    display: block;
+    gap: 0;
+  }
+
+  .work-accordion__slot {
+    display: block;
+    height: var(--work-slot-height, auto);
+  }
+
+  .card-grid--work .card--project {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: sticky;
+    top: var(--work-clearance, 0px);
+    background: var(--color-card-bg);
+  }
+
+  .card-grid--work .card--project .pill--status {
+    order: 1;
+    margin: 0;
+  }
+
+  .card-grid--work .card--project h3 {
+    order: 2;
+    margin-top: var(--space-xs);
+  }
+
+  .card-grid--work .card--project .card__thumb {
+    order: 3;
+    margin: var(--work-gap, var(--space-sm)) 0 0;
+    width: 100%;
+    max-width: none;
+    border-radius: var(--radius-md);
+    min-height: 0;
+    max-height: var(--work-thumb-max, 999px);
+    opacity: var(--work-body-opacity, 1);
+    overflow: hidden;
+  }
+
+  .card-grid--work .card--project p {
+    order: 4;
+    margin: var(--work-gap, var(--space-sm)) 0 0;
+    max-height: var(--work-desc-max, 999px);
+    opacity: var(--work-body-opacity, 1);
+    overflow: hidden;
+  }
 }
 
 /* Mockup containers (dev-rules.md Type A / Type B) */
@@ -235,6 +1247,11 @@ h3 {
 
 .mockup--cream {
   background: var(--color-cream);
+  box-shadow: var(--shadow-soft);
+}
+
+.mockup--persona-color {
+  background: #773722;
   box-shadow: var(--shadow-soft);
 }
 
@@ -255,7 +1272,29 @@ h3 {
 .about__layout {
   display: grid;
   gap: var(--space-lg);
-  align-items: start;
+  align-items: stretch;
+}
+
+.about__text .button {
+  margin-top: var(--space-md);
+}
+
+.about__image-frame {
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s ease;
+}
+
+.about__image-frame:hover .about__image {
+  transform: scale(1.02);
 }
 
 @media (min-width: 640px) {
@@ -264,23 +1303,980 @@ h3 {
   }
 }
 
+/* Two text variants for the About paragraph: the full version reads fine at
+   desktop/tablet widths, but a shorter, summarized variant swaps in on
+   mobile so the section doesn't run too long in the narrower column. */
+.about__text-compact {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .about__text-full {
+    display: none;
+  }
+
+  .about__text-compact {
+    display: block;
+  }
+}
+
+/* Scroll-triggered reveal — same pattern as the services, Selected Work, and How I Work
+   sections. Text column and photo slide in together (from left / from right respectively);
+   the greeting, headline, and paragraph inside the text column stagger by ~100ms each. */
+[id="about"].js-reveal-ready .about__text:not(.is-visible) {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+[id="about"].js-reveal-ready .about__image-frame:not(.is-visible) {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+[id="about"].js-reveal-ready .about__text.is-visible {
+  animation: how-work-fade-left 0.6s ease-out forwards;
+}
+
+[id="about"].js-reveal-ready .about__image-frame.is-visible {
+  animation: how-work-fade-right 0.6s ease-out forwards;
+}
+
+[id="about"].js-reveal-ready .about__text .hero__greeting:not(.is-visible),
+[id="about"].js-reveal-ready .about__text h2:not(.is-visible),
+[id="about"].js-reveal-ready .about__text p:not(.hero__greeting):not(.is-visible) {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+[id="about"].js-reveal-ready .about__text .hero__greeting.is-visible {
+  animation: about-text-fade-up 0.6s ease-out forwards;
+}
+
+[id="about"].js-reveal-ready .about__text h2.is-visible {
+  animation: about-text-fade-up 0.6s ease-out 0.1s forwards;
+}
+
+[id="about"].js-reveal-ready .about__text p:not(.hero__greeting).is-visible {
+  animation: about-text-fade-up 0.6s ease-out 0.2s forwards;
+}
+
+[id="about"].js-reveal-ready .about__text.reveal-settled,
+[id="about"].js-reveal-ready .about__image-frame.reveal-settled,
+[id="about"].js-reveal-ready .about__text .hero__greeting.reveal-settled,
+[id="about"].js-reveal-ready .about__text h2.reveal-settled,
+[id="about"].js-reveal-ready .about__text p:not(.hero__greeting).reveal-settled {
+  animation: none;
+}
+
+@keyframes about-text-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [id="about"].js-reveal-ready .about__text,
+  [id="about"].js-reveal-ready .about__image-frame,
+  [id="about"].js-reveal-ready .about__text .hero__greeting,
+  [id="about"].js-reveal-ready .about__text h2,
+  [id="about"].js-reveal-ready .about__text p {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Skills */
+.skills__heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.skills__heading h2 {
+  margin: 0;
+}
+
+.skills__star {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.skills__panel {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.skills__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .skills__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--color-cream);
+  color: var(--color-text-primary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  cursor: default;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-pill:hover {
+  transform: translateX(4px);
+  background: var(--color-accent-hover);
+  color: var(--color-text-on-dark);
+  box-shadow: var(--shadow-soft);
+}
+
+.skill-pill__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.skill-pill:hover .skill-pill__dot {
+  background: var(--color-cream);
+}
+
+/* Sequential typewriter reveal for pill labels (see scripts/main.js): same
+   technique as the mobile hero headline — characters are pre-rendered in the
+   DOM and only toggle opacity, so pill width is fixed from first paint and
+   typing never causes layout shift. Reuses the hero's tw-cursor-blink keyframe. */
+.skill-pill .tw-char {
+  opacity: 0;
+  transition: opacity 0.03s linear;
+}
+
+.skill-pill .tw-char.is-visible {
+  opacity: 1;
+}
+
+.skill-pill .tw-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 1px;
+  background: currentColor;
+  vertical-align: text-bottom;
+  animation: tw-cursor-blink 1s steps(1) infinite;
+}
+
+/* Scroll-triggered reveal — same pattern as the services/how-i-work sections: heading
+   fades up first, then each pill staggers in ~80ms after the previous one. */
+.skills.js-reveal-ready .skills__heading:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.skills.js-reveal-ready .skills__heading.is-visible {
+  animation: services-fade-up 0.6s ease-out forwards;
+}
+
+.skills.js-reveal-ready .skill-pill:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.skills.js-reveal-ready .skill-pill.is-visible {
+  animation: services-fade-up 0.6s ease-out forwards;
+}
+
+.skills__list .skill-pill:nth-child(1).is-visible { animation-delay: 0.1s; }
+.skills__list .skill-pill:nth-child(2).is-visible { animation-delay: 0.18s; }
+.skills__list .skill-pill:nth-child(3).is-visible { animation-delay: 0.26s; }
+.skills__list .skill-pill:nth-child(4).is-visible { animation-delay: 0.34s; }
+.skills__list .skill-pill:nth-child(5).is-visible { animation-delay: 0.42s; }
+.skills__list .skill-pill:nth-child(6).is-visible { animation-delay: 0.5s; }
+.skills__list .skill-pill:nth-child(7).is-visible { animation-delay: 0.58s; }
+.skills__list .skill-pill:nth-child(8).is-visible { animation-delay: 0.66s; }
+
+.skills.js-reveal-ready .skills__heading.reveal-settled,
+.skills.js-reveal-ready .skill-pill.reveal-settled {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills.js-reveal-ready .skills__heading,
+  .skills.js-reveal-ready .skill-pill {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Tool Stack */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .tool-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tool-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  text-align: center;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-card:hover {
+  border-color: var(--color-accent-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.tool-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  color: var(--color-text-primary);
+  transition: color 0.2s ease;
+}
+
+.tool-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tool-card__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tool-card:hover .tool-card__icon {
+  color: var(--color-accent-hover);
+}
+
+/* GitHub's mark is drawn with fill="currentColor", so it inherits the accent-hover
+   tint above; every other tool icon uses fixed brand-color fills and is unaffected. */
+.tool-card--github:hover .tool-card__icon {
+  color: var(--color-text-primary);
+}
+
+.tool-card__name {
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-small);
+  color: var(--color-text-primary);
+}
+
+/* Scroll-triggered reveal — same pattern as the Skills pills: each card
+   scales up from 90% while fading in, staggered ~80ms apart in grid order
+   (left-to-right, row by row). */
+.tool-stack.js-reveal-ready .tool-card:not(.is-visible) {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.tool-stack.js-reveal-ready .tool-card.is-visible {
+  animation: tool-card-scale-in 0.35s ease-out both;
+}
+
+.tool-grid .tool-card:nth-child(1).is-visible { animation-delay: 0s; }
+.tool-grid .tool-card:nth-child(2).is-visible { animation-delay: 0.08s; }
+.tool-grid .tool-card:nth-child(3).is-visible { animation-delay: 0.16s; }
+.tool-grid .tool-card:nth-child(4).is-visible { animation-delay: 0.24s; }
+.tool-grid .tool-card:nth-child(5).is-visible { animation-delay: 0.32s; }
+.tool-grid .tool-card:nth-child(6).is-visible { animation-delay: 0.4s; }
+.tool-grid .tool-card:nth-child(7).is-visible { animation-delay: 0.48s; }
+.tool-grid .tool-card:nth-child(8).is-visible { animation-delay: 0.56s; }
+
+.tool-stack.js-reveal-ready .tool-card.reveal-settled {
+  animation: none;
+}
+
+@keyframes tool-card-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-stack.js-reveal-ready .tool-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Vibe while hustling */
+.vibe-row-label {
+  margin: 0 0 var(--space-sm);
+}
+
+.vibe-grid {
+  list-style: none;
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+}
+
+.vibe-grid:last-of-type {
+  margin-bottom: 0;
+}
+
+.vibe-card {
+  text-align: left;
+}
+
+.vibe-card__art {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.vibe-card__art--poster {
+  aspect-ratio: 2 / 3;
+}
+
+.vibe-card__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vibe-card__tag {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+}
+
+.vibe-card__play {
+  position: absolute;
+  bottom: var(--space-sm);
+  right: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-accent);
+  color: white;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.vibe-card__play svg {
+  margin-left: 2px;
+}
+
+.vibe-card__play:hover {
+  background: var(--color-accent-hover);
+  transform: scale(1.06);
+}
+
+.vibe-card.is-playing .vibe-card__play {
+  display: none;
+}
+
+.vibe-card__info {
+  padding-top: var(--space-sm);
+}
+
+.vibe-card__title {
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.vibe-card__artist {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin: 0.25rem 0 0;
+}
+
+.vibe-card__link {
+  display: inline-block;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+  transition: color 0.2s ease;
+}
+
+.vibe-card__link:hover {
+  color: var(--color-accent-hover);
+}
+
+.vibe-card__note {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin: 0.25rem 0 0;
+}
+
+.vibe-card__player:not(:empty) {
+  margin-top: var(--space-sm);
+}
+
+.vibe-card__player iframe {
+  display: block;
+  width: 100%;
+}
+
+.vibe-attribution {
+  font-size: 0.75rem;
+  font-weight: var(--fw-regular);
+  font-style: normal;
+  color: var(--color-text-muted);
+  opacity: 0.75;
+  text-align: center;
+  margin: var(--space-lg) 0 0;
+}
+
 /* Contact / footer */
 .contact {
   text-align: center;
+}
+
+.contact__subtext {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+}
+
+/* Two text variants: the full subtext wraps to 3 lines in the narrower
+   mobile column, so a tighter variant swaps in to keep it to 2. */
+.contact__subtext-compact {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .contact__subtext-full {
+    display: none;
+  }
+
+  .contact__subtext-compact {
+    display: block;
+  }
+}
+
+.contact__toggle {
+  display: inline-flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.contact__tab {
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact__tab:hover {
+  border-color: var(--color-accent);
+}
+
+.contact__tab.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact__cal-wrap {
+  max-width: 560px;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-card-bg);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact__cal-embed {
+  display: block;
+  width: 100%;
+  height: 680px;
+  border: none;
+}
+
+/* Mobile: the cal.eu widget stacks the calendar and time-slot list
+   vertically instead of side-by-side, which needs meaningfully more
+   height than the desktop 680px box. A fixed height tuned for desktop
+   left mobile content cramped/cut off, so dates near the bottom weren't
+   reliably tappable. */
+@media (max-width: 639px) {
+  .contact__cal-embed {
+    height: 1100px;
+  }
+}
+
+.contact__form {
+  max-width: 560px;
+  margin-inline: auto;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--color-card-bg);
+  color: var(--color-text-on-dark);
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+
+.contact__confirmation {
+  margin: var(--space-md) 0 0;
+  font-weight: var(--fw-medium);
+  color: var(--color-cream);
+}
+
+.contact__form .eyebrow {
+  color: var(--color-text-on-dark);
+}
+
+.contact__project-types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--space-lg);
+}
+
+.contact__project-types legend {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.pill-select {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-cream);
+  color: var(--color-text-primary);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pill-select input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.pill-select:hover {
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, var(--color-cream));
+}
+
+.pill-select:has(input:checked) {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Click bounce — JS toggles this class on/off (with a reflow in between) so it can
+   retrigger on repeat clicks; no fill-mode means it cleanly hands transform back
+   afterward, so it never fights the hover/checked states above. */
+@keyframes pill-bounce {
+  0% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pill-select.pill-bounce {
+  animation: pill-bounce 0.2s ease;
+}
+
+.contact__form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.contact__label {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--space-xs);
+}
+
+.contact__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  transition: all 0.2s ease;
+}
+
+.contact__input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-gold) 20%, transparent);
+}
+
+.contact__input--error {
+  border-color: #b91c1c;
+}
+
+.contact__input--error:focus {
+  border-color: #b91c1c;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.15);
+}
+
+.contact__error {
+  font-size: var(--fs-small);
+  color: #b91c1c;
+  margin-top: var(--space-xs);
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+select.contact__input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%236B6B6B' stroke-width='2'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+select.contact__input:invalid {
+  color: var(--color-text-muted);
+}
+
+/* Mobile: the "Send project details" card ran ~975px tall on a 390px-wide
+   phone — more than a full screen of scroll before any content below it.
+   Tighten the spacing between fields and shrink control heights so the
+   card is proportional to a mobile screen, while keeping every field
+   comfortably readable and tappable (inputs/selects/submit stay ~42-43px
+   tall; the service-type pills are left as-is since they already sit
+   below the 44px target and shrinking them further would only hurt
+   tappability). */
+@media (max-width: 639px) {
+  .contact__form--brief {
+    padding: var(--space-md);
+  }
+
+  .contact__form--brief .contact__form-fields {
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__form--brief .contact__project-types {
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__form--brief .contact__project-types legend {
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact__form--brief .contact__input {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .contact__form--brief select.contact__input {
+    padding-right: 2.5rem;
+  }
+
+  .contact__form--brief .contact__textarea {
+    height: 88px;
+    min-height: 88px;
+  }
+
+  .contact__form--brief button[type="submit"] {
+    padding: 0.65rem 1.5rem;
+  }
+}
+
+.button--pill {
+  border-radius: 999px;
+}
+
+/* Scroll-triggered reveal — same pattern as the other sections. Heading -> subtext -> the
+   dark form card, which scales in rather than sliding since it's a single centered focal card. */
+.contact.js-reveal-ready h2:not(.is-visible),
+.contact.js-reveal-ready .contact__subtext:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.contact.js-reveal-ready .contact__form:not(.is-visible) {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.contact.js-reveal-ready h2.is-visible {
+  animation: services-fade-up 0.6s ease-out forwards;
+}
+
+.contact.js-reveal-ready .contact__subtext.is-visible {
+  animation: services-fade-up 0.6s ease-out 0.1s forwards;
+}
+
+.contact.js-reveal-ready .contact__form.is-visible {
+  animation: contact-card-scale-in 0.6s ease-out 0.2s forwards;
+}
+
+.contact.js-reveal-ready h2.reveal-settled,
+.contact.js-reveal-ready .contact__subtext.reveal-settled,
+.contact.js-reveal-ready .contact__form.reveal-settled {
+  animation: none;
+}
+
+@keyframes contact-card-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact.js-reveal-ready h2,
+  .contact.js-reveal-ready .contact__subtext,
+  .contact.js-reveal-ready .contact__form {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+.testimonial-card {
+  max-width: 560px;
+  margin: var(--space-xl) auto 0;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border: none;
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  margin-bottom: var(--space-sm);
+}
+
+/* Two text variants for the testimonial quote: the full quote reads fine on
+   desktop/tablet, but a shorter mobile version keeps the card height sane
+   in the narrower marquee (see the max-width: 639px block below). */
+.testimonial-card__quote--compact {
+  display: none;
+}
+
+.testimonial-card__attribution {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-weight: var(--fw-semibold);
+}
+
+/* Testimonials marquee */
+.testimonials {
+  text-align: center;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee__track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  gap: var(--space-lg);
+  animation: marquee-scroll 50s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee .testimonial-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 340px;
+  margin: 0;
+  padding: var(--space-sm);
+}
+
+.marquee .testimonial-card__quote {
+  flex: 1;
+}
+
+/* Mobile: the fixed 340px card (sized for desktop) plus the marquee's
+   edge-to-edge track left cards flush against the viewport edge and
+   clipped mid-sentence on both sides. Give the track breathing room and
+   size each card off the viewport itself so exactly one sits fully
+   inside it at a time. */
+@media (max-width: 639px) {
+  .marquee {
+    padding-inline: var(--space-md);
+  }
+
+  .marquee__track {
+    gap: var(--space-sm);
+  }
+
+  .marquee .testimonial-card {
+    flex-basis: 82vw;
+    padding: var(--space-sm);
+  }
+
+  .testimonial-card__quote--full {
+    display: none;
+  }
+
+  .testimonial-card__quote--compact {
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-dark);
+  color: var(--color-text-on-dark);
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+  background: var(--color-gold);
+  color: var(--color-cream);
+  box-shadow: var(--shadow-soft);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .contact__socials {
   display: flex;
   justify-content: center;
   gap: var(--space-md);
-  margin-top: var(--space-md);
+}
+
+.site-footer__text p {
+  margin: 0;
+}
+
+.site-footer__text p + p {
+  margin-top: var(--space-xs);
 }
 
 .site-footer {
-  border-top: 1px solid var(--color-border);
-  padding-block: var(--space-lg);
-  font-size: var(--fs-small);
-  color: var(--color-text-muted);
+  border-top: 2px solid var(--color-border);
+  padding-block: var(--space-2xl);
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
 }
 
 .site-footer .container {
@@ -288,12 +2284,73 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-sm);
+  gap: var(--space-md);
+}
+
+.site-footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.site-footer__email {
+  font-weight: var(--fw-medium);
+}
+
+.site-footer__email:hover {
+  color: var(--color-accent-hover);
+}
+
+.site-footer__clock {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.site-footer__socials {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.site-footer__social-link {
+  transition: all 0.2s ease;
+}
+
+.site-footer__social-link:hover {
+  color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .site-footer {
+    padding-block: var(--space-xl);
+  }
 }
 
 /* Case study pages */
 .case-study-hero {
   padding-block: var(--space-xl) var(--space-2xl);
+}
+
+@media (min-width: 1024px) {
+  .case-study-hero {
+    padding-block: var(--space-xl);
+  }
+}
+
+/* StackIt's hero has no media, so its bottom padding otherwise stacks with the
+   next section's top padding into an oversized empty gap. Section bottoms are
+   trimmed to match, keeping every section-to-section gap the same size. */
+.page-stackit .case-study-hero,
+.page-stackit .case-study-section {
+  padding-bottom: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+  .page-stackit .case-study-hero,
+  .page-stackit .case-study-section {
+    padding-bottom: var(--space-sm);
+  }
 }
 
 .case-study-hero__meta {
@@ -302,9 +2359,114 @@ h3 {
   margin-bottom: var(--space-sm);
 }
 
+.case-study-hero__media {
+  margin-top: var(--space-lg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.case-study-hero__media video,
+.case-study-hero__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Scroll-triggered entrance — fade + slight scale-in, once, on first viewport entry.
+   Gated on js-reveal-ready (added by scripts/main.js) so it no-ops without JS or
+   under prefers-reduced-motion, where the media is simply visible by default. */
+.case-study-hero.js-reveal-ready .case-study-hero__media:not(.is-visible) {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.case-study-hero.js-reveal-ready .case-study-hero__media.is-visible {
+  animation: hero-media-fade-scale 0.5s ease-out forwards;
+}
+
+@keyframes hero-media-fade-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* StackIt has no hero media or editorial split layout, so its hero copy and each
+   case-study-section's content get the same fade-up entrance used on the homepage
+   sections (#how-i-work, .services) instead. */
+.page-stackit .case-study-hero.js-reveal-ready :is(.pill--status, h1, .hero__subtext):not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-stackit .case-study-hero.js-reveal-ready .pill--status.is-visible {
+  animation: services-fade-up 0.6s ease-out forwards;
+}
+
+.page-stackit .case-study-hero.js-reveal-ready h1.is-visible {
+  animation: services-fade-up 0.6s ease-out 0.09s forwards;
+}
+
+.page-stackit .case-study-hero.js-reveal-ready .hero__subtext.is-visible {
+  animation: services-fade-up 0.6s ease-out 0.18s forwards;
+}
+
+.page-stackit .case-study-hero.js-reveal-ready :is(.pill--status, h1, .hero__subtext).reveal-settled {
+  animation: none;
+}
+
+.page-stackit .case-study-section.js-reveal-ready :is(h2, p, .stat-block, .card, .mockup):not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-stackit .case-study-section.js-reveal-ready h2.is-visible {
+  animation: services-fade-up 0.6s ease-out forwards;
+}
+
+.page-stackit .case-study-section.js-reveal-ready :is(p, .stat-block, .card, .mockup).is-visible {
+  animation: services-fade-up 0.6s ease-out 0.09s forwards;
+}
+
+.page-stackit .case-study-section.js-reveal-ready .reveal-settled {
+  animation: none;
+}
+
+.mockup img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-lg) - var(--space-sm));
+}
+
 .case-study-section {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-2xl);
   border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+  .case-study-section {
+    padding-block: var(--space-xl);
+  }
+}
+
+.page-everiithing .case-study-section,
+.page-everiithing .next-project,
+.page-bizcore .case-study-section,
+.page-bizcore .next-project,
+.page-ceembee .case-study-section,
+.page-ceembee .next-project,
+.page-receiptvault .case-study-section,
+.page-receiptvault .next-project,
+.page-mikhiyah .case-study-section,
+.page-mikhiyah .next-project,
+.page-stackit .case-study-section,
+.page-stackit .next-project {
+  border-top: none;
 }
 
 .case-study-gallery {
@@ -319,12 +2481,481 @@ h3 {
   }
 }
 
+/* Grid items already stretch to the row's tallest card — make the image
+   fill that frame (cropped, not distorted) so shorter mockups don't look
+   visually shorter than their siblings. */
+.case-study-gallery .mockup img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+/* Screens gallery — hover lift, tactile even though the cards are static images */
+.page-everiithing .case-study-gallery .mockup,
+.page-stackit .case-study-gallery .mockup {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-everiithing .case-study-gallery .mockup:hover,
+.page-stackit .case-study-gallery .mockup:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-gold) 35%, transparent);
+}
+
+/* Screens gallery — staggered scroll-triggered entrance, fade + slide-up, once.
+   All cards get is-visible simultaneously (see scripts/main.js); the stagger itself
+   comes from animation-delay on each card. */
+.page-everiithing .case-study-gallery.js-reveal-ready .mockup:not(.is-visible),
+.page-receiptvault .case-study-gallery.js-reveal-ready .mockup:not(.is-visible),
+.page-stackit .case-study-gallery.js-reveal-ready .mockup:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-everiithing .case-study-gallery.js-reveal-ready .mockup.is-visible,
+.page-receiptvault .case-study-gallery.js-reveal-ready .mockup.is-visible,
+.page-stackit .case-study-gallery.js-reveal-ready .mockup.is-visible {
+  animation: gallery-fade-up 0.5s ease-out forwards;
+}
+
+.page-everiithing .case-study-gallery .mockup:nth-child(2).is-visible,
+.page-receiptvault .case-study-gallery .mockup:nth-child(2).is-visible {
+  animation-delay: 0.12s;
+}
+
+.page-stackit .case-study-gallery .mockup:nth-child(2).is-visible {
+  animation-delay: 0.12s;
+}
+
+.page-stackit .case-study-gallery .mockup:nth-child(3).is-visible {
+  animation-delay: 0.24s;
+}
+
+.page-stackit .case-study-gallery .mockup:nth-child(4).is-visible {
+  animation-delay: 0.36s;
+}
+
+.page-everiithing .case-study-gallery.js-reveal-ready .mockup.reveal-settled,
+.page-receiptvault .case-study-gallery.js-reveal-ready .mockup.reveal-settled,
+.page-stackit .case-study-gallery.js-reveal-ready .mockup.reveal-settled {
+  animation: none;
+}
+
+@keyframes gallery-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Case study editorial layout — Problem/Solution image + text pairing */
+.case-study-editorial {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+  margin-top: var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .case-study-editorial {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .case-study-editorial {
+    gap: var(--space-2xl);
+  }
+}
+
+.case-study-editorial--top {
+  align-items: flex-start;
+}
+
+/* Mikhiyah's Solution content (a long bullet list plus a palette note) runs
+   much taller than the short 4:3 image — center-aligning (the default) left
+   the image floating in the middle of that tall column. Top-align it instead
+   so it sits level with the first line of content. */
+.page-mikhiyah .case-study-editorial--reverse {
+  align-items: flex-start;
+}
+
+.case-study-editorial__media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-cream);
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 4 / 5;
+}
+
+.case-study-editorial__media--short {
+  aspect-ratio: 4 / 3;
+}
+
+.case-study-editorial__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* This source photo's own crop (baked into the SVG export) leaves the
+   subject shifted left with empty space on the right edge at the default
+   center object-position — nudge the visible window left to keep the
+   handshake framed instead of showing that gap. */
+.page-mikhiyah .case-study-editorial--reverse .case-study-editorial__media img {
+  object-position: 15% center;
+}
+
+.case-study-editorial__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Split scroll-triggered entrance — Problem section only (.case-study-editorial--top):
+   image slides in from the left, text column from the right, simultaneously, once. */
+.page-everiithing .case-study-editorial--top.js-reveal-ready .case-study-editorial__media:not(.is-visible),
+.page-bizcore .case-study-editorial--top.js-reveal-ready .case-study-editorial__media:not(.is-visible),
+.page-ceembee .case-study-editorial--top.js-reveal-ready .case-study-editorial__media:not(.is-visible),
+.page-mikhiyah .case-study-editorial--top.js-reveal-ready .case-study-editorial__media:not(.is-visible),
+.page-receiptvault .case-study-editorial--top.js-reveal-ready .case-study-editorial__media:not(.is-visible) {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.page-everiithing .case-study-editorial--top.js-reveal-ready .case-study-editorial__media.is-visible,
+.page-bizcore .case-study-editorial--top.js-reveal-ready .case-study-editorial__media.is-visible,
+.page-ceembee .case-study-editorial--top.js-reveal-ready .case-study-editorial__media.is-visible,
+.page-mikhiyah .case-study-editorial--top.js-reveal-ready .case-study-editorial__media.is-visible,
+.page-receiptvault .case-study-editorial--top.js-reveal-ready .case-study-editorial__media.is-visible {
+  animation: case-study-fade-left 0.6s ease-out forwards;
+}
+
+.page-everiithing .case-study-editorial--top.js-reveal-ready .case-study-editorial__content:not(.is-visible),
+.page-bizcore .case-study-editorial--top.js-reveal-ready .case-study-editorial__content:not(.is-visible),
+.page-ceembee .case-study-editorial--top.js-reveal-ready .case-study-editorial__content:not(.is-visible),
+.page-mikhiyah .case-study-editorial--top.js-reveal-ready .case-study-editorial__content:not(.is-visible),
+.page-receiptvault .case-study-editorial--top.js-reveal-ready .case-study-editorial__content:not(.is-visible) {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.page-everiithing .case-study-editorial--top.js-reveal-ready .case-study-editorial__content.is-visible,
+.page-bizcore .case-study-editorial--top.js-reveal-ready .case-study-editorial__content.is-visible,
+.page-ceembee .case-study-editorial--top.js-reveal-ready .case-study-editorial__content.is-visible,
+.page-mikhiyah .case-study-editorial--top.js-reveal-ready .case-study-editorial__content.is-visible,
+.page-receiptvault .case-study-editorial--top.js-reveal-ready .case-study-editorial__content.is-visible {
+  animation: case-study-fade-right 0.6s ease-out forwards;
+}
+
+@keyframes case-study-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes case-study-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Split scroll-triggered entrance — Solution/Process section (.case-study-editorial--reverse):
+   directions mirrored vs. the Problem section since the image sits on the right and the text
+   on the left at desktop width (order swapped) — each element enters from just outside its own
+   resting side, rather than crossing the full width. */
+.page-everiithing .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__media:not(.is-visible),
+.page-mikhiyah .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__media:not(.is-visible),
+.page-receiptvault .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__media:not(.is-visible),
+.page-bizcore .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__media:not(.is-visible) {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.page-everiithing .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__media.is-visible,
+.page-mikhiyah .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__media.is-visible,
+.page-receiptvault .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__media.is-visible,
+.page-bizcore .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__media.is-visible {
+  animation: case-study-fade-right 0.6s ease-out forwards;
+}
+
+.page-everiithing .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__content:not(.is-visible),
+.page-mikhiyah .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__content:not(.is-visible),
+.page-receiptvault .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__content:not(.is-visible),
+.page-bizcore .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__content:not(.is-visible) {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.page-everiithing .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__content.is-visible,
+.page-mikhiyah .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__content.is-visible,
+.page-receiptvault .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__content.is-visible,
+.page-bizcore .case-study-editorial--reverse.js-reveal-ready .case-study-editorial__content.is-visible {
+  animation: case-study-fade-left 0.6s ease-out forwards;
+}
+
+@media (min-width: 640px) {
+  .case-study-editorial--reverse .case-study-editorial__media {
+    order: 2;
+  }
+
+  .case-study-editorial--reverse .case-study-editorial__content {
+    order: 1;
+  }
+}
+
 .next-project {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: var(--space-lg);
+  padding-block: var(--space-2xl);
   border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+  .next-project {
+    padding-block: var(--space-xl);
+  }
+}
+
+.next-project a {
+  transition: color 0.2s ease;
+}
+
+.next-project a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Working Together — client process, distinct from #how-i-work's design methodology.
+   A real FAQ-style accordion. Per the reference: one continuous brand-colored
+   surface (--color-card-bg) with white/cream text and thin divider lines
+   between rows — not stacked light cards inside a dark wrapper. */
+.accordion {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  /* Vertical padding was 0 — rows sat flush against the container's top/
+     bottom edges, reading as cramped next to the rounded corners. space-sm
+     here + each row's own space-md padding gives the first/last row the
+     same ~40px inset as the horizontal space-lg padding. */
+  padding: var(--space-sm) var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.accordion-item {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text-on-dark) 20%, transparent);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-item__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  /* width:100% is required here — buttons don't stretch to fill a block
+     parent via width:auto the way a plain <div> would, even with
+     display:flex set. .accordion-item itself already has no padding of its
+     own (it sits flush with the accordion's inner edge, same width as the
+     divider lines), so this fills the row exactly with no bleed needed. */
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-text-on-dark);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.accordion-item__trigger:hover {
+  background-color: color-mix(in srgb, var(--color-card-bg) 90%, black);
+}
+
+.accordion-item__label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.accordion-item__number {
+  font-weight: var(--fw-semibold);
+  color: color-mix(in srgb, var(--color-text-on-dark) 45%, transparent);
+}
+
+.accordion-item__title {
+  font-weight: var(--fw-medium);
+  color: var(--color-text-on-dark);
+}
+
+.accordion-item__icon {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-text-on-dark) 50%, transparent);
+  flex-shrink: 0;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.accordion-item__trigger:hover .accordion-item__icon {
+  transform: scale(1.1);
+  border-color: var(--color-text-on-dark);
+}
+
+.accordion-item__icon::before,
+.accordion-item__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--color-text-on-dark);
+  transform: translate(-50%, -50%);
+  transition: background 0.2s ease;
+}
+
+.accordion-item__icon::before {
+  width: 10px;
+  height: 2px;
+}
+
+.accordion-item__icon::after {
+  width: 2px;
+  height: 10px;
+}
+
+.accordion-item.is-open .accordion-item__icon {
+  transform: rotate(45deg);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.accordion-item.is-open .accordion-item__trigger:hover .accordion-item__icon {
+  transform: rotate(45deg) scale(1.1);
+}
+
+.accordion-item.is-open .accordion-item__icon::before,
+.accordion-item.is-open .accordion-item__icon::after {
+  background: white;
+}
+
+/* Grid-rows collapse trick instead of a fixed max-height: sizes to each
+   row's actual content (so a longer description never clips and a shorter
+   one never leaves a dead gap before the next divider). */
+.accordion-item__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  overflow: hidden;
+  transition: grid-template-rows 0.3s ease, opacity 0.2s ease;
+}
+
+.accordion-item.is-open .accordion-item__panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.accordion-item__panel p {
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 var(--space-md);
+  max-width: 55ch;
+  color: color-mix(in srgb, var(--color-text-on-dark) 85%, transparent);
+}
+
+/* Bottom padding only applies once open — padding can never shrink below
+   its own value on the element that owns it, so an always-on padding-bottom
+   here would stop the collapsed row from ever reaching true 0 height. */
+.accordion-item.is-open .accordion-item__panel p {
+  padding-bottom: var(--space-md);
+}
+
+.case-study-cta {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-xl);
+}
+
+@media (min-width: 1024px) {
+  .case-study-cta {
+    padding-block: var(--space-lg);
+  }
+}
+
+/* On the About page, every other section-to-section gap uses the plain
+   default `section` padding-block. .case-study-cta's own reduced padding
+   (tuned for case-study pages, where it follows the tighter
+   .case-study-section/.next-project rhythm) reads as a smaller gap here by
+   comparison — so restore the default spacing for this page specifically. */
+.page-about .case-study-cta {
+  padding-block: var(--space-2xl);
+}
+
+@media (min-width: 1024px) {
+  .page-about .case-study-cta {
+    padding-block: var(--space-xl);
+  }
+}
+
+.case-study-cta__layout {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+  text-align: center;
+}
+
+.case-study-cta__image-frame {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 960 / 879;
+  background: var(--color-cream);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  justify-self: center;
+}
+
+.case-study-cta__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.case-study-cta__text .button {
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+  .case-study-cta__layout {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xl);
+    text-align: left;
+  }
+
+  .case-study-cta__image-frame {
+    justify-self: start;
+  }
 }
 
 .stat-block {
@@ -332,6 +2963,10 @@ h3 {
   gap: var(--space-md);
   grid-template-columns: 1fr;
   margin-block: var(--space-md);
+}
+
+.stat-block + .hero__subtext {
+  margin-top: 0;
 }
 
 @media (min-width: 640px) {
@@ -343,5 +2978,18 @@ h3 {
 .stat-block__figure {
   font-family: var(--font-display);
   font-size: var(--fs-h1);
-  color: var(--color-gold);
+  color: #773722;
+  margin: 0 0 var(--space-xs);
+}
+
+.stat-block > div > p:last-child {
+  margin-top: 0;
+}
+
+.color-star[data-contrast="light"] .color-star__label {
+  color: var(--color-text-on-dark);
+}
+
+.color-star[data-contrast="dark"] .color-star__label {
+  color: var(--color-bg-dark);
 }

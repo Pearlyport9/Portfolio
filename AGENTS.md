@@ -35,6 +35,28 @@ Two JSON files will be placed in the project root before the build starts:
 - Do not generate or print prompts unless explicitly asked
 - Do not alter completed/working sections when building new ones
 
+## Design & UI Work
+Read design-tokens.md and dev-rules.md first — those are 
+the source of truth for colors, fonts, and spacing.
+
+Color values originate in color-tokens.json and are generated 
+into styles/tokens.css via generate-tokens.js — never hardcode 
+or hand-edit hex values directly in tokens.css. If a new color 
+is needed, add it to color-tokens.json and re-run the generator 
+(node generate-tokens.js) before continuing — this step is 
+manual, not automatic.
+
+Use UI/UX Pro Max only for layout/structure decisions not 
+already covered in structure.md.
+
+Use Magic to generate new components, but always override 
+any of its default colors/fonts with what's in the generated 
+tokens.css — never Magic's own defaults.
+
+## Local dev server
+
+Run `npm install` once, then `npm run dev` to start `browser-sync` on port 8080 (http://localhost:8080). Leave that terminal running — it serves files straight from disk and auto-reloads the browser on save, so there is never a need to restart it or manually refresh while editing. Do not use `npx serve` or `npx http-server` — those re-resolve the package from the registry on every invocation, which caused crashes/slowness under a previous setup. Do not use `live-server` either — v1.2.2 hardcodes `</svg>` as a script-injection target (`node_modules/live-server/index.js`), which corrupts every SVG served through it and breaks `<img src="*.svg">` rendering across the whole site; `browser-sync` scopes its injection to actual HTML documents and doesn't have this problem. Do not open HTML files directly via `file://`; every page uses root-relative asset paths (e.g. `/styles/main.css`) that only resolve when served over `http://`.
+
 ## Current status
 
 Design tokens and structure are finalized. Content (hero copy, case study write-ups) is in progress. Do not begin build until `content.md` is confirmed ready.

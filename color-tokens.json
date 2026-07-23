@@ -2,10 +2,12 @@
   "color": {
     "key": {
       "primary": "hsl(44, 74%, 31%)",
-      "secondary": "hsl(45, 51%, 86%)",
+      "secondary": "hsl(43, 73%, 90%)",
       "tertiary": "hsl(42, 68%, 10%)",
       "neutral": "hsl(0, 0%, 42%)",
-      "neutralVariant": "hsl(37, 20%, 87%)"
+      "neutralVariant": "hsl(37, 20%, 87%)",
+      "accent": "hsl(12, 74%, 53%)",
+      "accentHover": "hsl(10, 69%, 47%)"
     },
     "palette": {
       "primary": {
