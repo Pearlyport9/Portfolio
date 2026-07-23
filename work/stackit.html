@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
   <title>StackIt — Student Fintech Case Study | Olayemi</title>
   <meta name="description" content="A full UX case study for a student-centric savings app: from user research and empathy mapping through to high-fidelity prototype, designed to help undergraduates build financial independence." />
   <link rel="canonical" href="https://olayemi-portfolio.vercel.app/work/stackit.html" />
@@ -22,7 +23,7 @@
 </head>
 <body class="page-stackit">
 
-  <header class="site-nav">
+  <header class="site-nav site-nav--mobile-glass">
     <div class="container">
       <a href="/index.html" class="site-nav__brand">Olayemi</a>
       <nav aria-label="Primary">
@@ -35,6 +36,25 @@
       </nav>
       <a href="/contact.html#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
+
+    <div class="site-nav__float">
+      <a href="/index.html" class="site-nav__float-brand">Olayemi</a>
+      <button type="button" class="site-nav__float-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+        <span class="site-nav__float-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav__panel" id="mobile-nav-panel" aria-label="Primary mobile" hidden>
+      <button type="button" class="site-nav__panel-close" aria-label="Close menu">
+        <span class="site-nav__panel-close-icon" aria-hidden="true"></span>
+      </button>
+      <ul>
+        <li><a href="/index.html#work">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -48,12 +68,15 @@
         <p class="hero__subtext">A student-centric fintech concept helping undergraduates build saving habits during school and a financial foundation for life after graduation.</p>
       </div>
     </section>
+    <script>document.querySelector('.case-study-hero').classList.add('js-reveal-ready');</script>
 
     <!-- ② Problem -->
     <section class="case-study-section">
       <div class="container">
         <h2>Problem</h2>
-        <p>Ayo was a bright student who never saved because money always seemed to come. When he graduated with a business dream and no savings, then faced his mother's medical emergency with nothing set aside, it was too late. StackIt is built for every Ayo, making saving automatic, purposeful, and tied to life after school.</p>
+        <p>Most Nigerian undergraduates don't save. Money always seems to come, until it doesn't.</p>
+        <p>Graduation arrives with a business dream and no savings. A family emergency hits with nothing set aside. By then, it's too late.</p>
+        <p>StackIt is built for every student who needs to save but hasn't started yet. Saving made automatic, purposeful, and tied to life after school.</p>
       </div>
     </section>
 

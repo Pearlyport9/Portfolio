@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
   <title>Everiithing — Verification-First Marketplace | Olayemi</title>
   <meta name="description" content="Designed and built end-to-end: Nigeria's first fully managed, verification-first marketplace connecting customers with trusted home and office service providers." />
   <link rel="canonical" href="https://olayemi-portfolio.vercel.app/work/everiithing.html" />
@@ -22,7 +23,7 @@
 </head>
 <body class="page-everiithing">
 
-  <header class="site-nav">
+  <header class="site-nav site-nav--mobile-glass">
     <div class="container">
       <a href="/index.html" class="site-nav__brand">Olayemi</a>
       <nav aria-label="Primary">
@@ -35,6 +36,25 @@
       </nav>
       <a href="/contact.html#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
+
+    <div class="site-nav__float">
+      <a href="/index.html" class="site-nav__float-brand">Olayemi</a>
+      <button type="button" class="site-nav__float-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+        <span class="site-nav__float-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav__panel" id="mobile-nav-panel" aria-label="Primary mobile" hidden>
+      <button type="button" class="site-nav__panel-close" aria-label="Close menu">
+        <span class="site-nav__panel-close-icon" aria-hidden="true"></span>
+      </button>
+      <ul>
+        <li><a href="/index.html#work">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -50,6 +70,7 @@
         </div>
       </div>
     </section>
+    <script>document.querySelector('.case-study-hero').classList.add('js-reveal-ready');</script>
 
     <section class="case-study-section">
       <div class="container">
@@ -59,7 +80,9 @@
             <img src="/assets/work/everiithing/Problem%20Pic.svg" alt="The trust gap Everiithing addresses in Nigeria's home services market" loading="lazy" />
           </div>
           <div class="case-study-editorial__content">
-            <p>Finding a reliable artisan in Nigeria is a persistent everyday frustration. Customers face no reliable vetting (WhatsApp/Instagram are flooded with self-promoted, unverifiable providers), poor workmanship with no accountability, inflated and opaque pricing negotiated ad hoc, frequent no-shows, and zero formal recourse when things go wrong. On the other side, skilled artisans are invisible: buried under noise from unqualified competitors, with no way to build a verifiable professional identity, access consistent job leads, or grow a steady income pipeline. Both sides are stuck navigating a market with no trust infrastructure.</p>
+            <p>Trust is the missing layer in Nigeria's home services market.</p>
+            <p>Customers can't verify providers on WhatsApp or Instagram. Poor workmanship goes unchecked. Pricing is opaque, negotiated on the fly. No-shows are routine. Zero formal recourse when things go wrong.</p>
+            <p>Skilled artisans are invisible too, buried under unqualified competitors with no way to build a verifiable reputation or access consistent work.</p>
           </div>
         </div>
       </div>
@@ -73,14 +96,12 @@
             <img src="/assets/work/everiithing/Solution%20Pic.svg" alt="Everiithing's verification-first marketplace platform" loading="lazy" />
           </div>
           <div class="case-study-editorial__content">
-            <ul>
-              <li>Designed and built solo as a fully managed marketplace: the platform controls pricing, quality, and customer experience end-to-end to close the trust gap.</li>
-              <li>Built a 7-stage provider verification pipeline (document submission, NIN identity match, reference calls, guarantor submission, in-person interview, practical skills test, platform onboarding) as the core trust differentiator.</li>
-              <li>Designed flat-rate, transparent pricing across 7 service categories (plumbing, electrical, AC, generator/inverter, painting, deep cleaning, carpentry): no hidden fees, no negotiation.</li>
-              <li>Designed the full booking-to-payout flow: browse verified providers → instant booking → escrow payment → job completion confirmation → funds released to provider → rating/review.</li>
-              <li>Designed and built three connected surfaces: customer-facing booking app, provider dashboard (job notifications, earnings tracker), and an internal admin/ops panel (verification queue, dispute resolution, pricing management).</li>
-              <li>MVP scoped deliberately: excluded subscription tiers, live chat, GPS tracking, and native mobile apps from v1 to ship a focused Lagos pilot first.</li>
-            </ul>
+            <p>A fully managed marketplace designed and built solo, end to end. Platform controls pricing, quality, and the full customer experience.</p>
+            <p>Seven-stage verification pipeline includes document submission, NIN identity match, reference calls, guarantor submission, in-person interview, practical skills test, and platform onboarding.</p>
+            <p>Flat-rate pricing across 7 service categories: plumbing, electrical, AC, generator/inverter, painting, deep cleaning, and carpentry. No hidden fees, no negotiation.</p>
+            <p>End-to-end booking-to-payout flow: browse, book, escrow payment, job completion, funds released, rate and review.</p>
+            <p>Three connected surfaces: a customer-facing booking app, a provider dashboard with earnings tracker, and an internal admin panel for verification and dispute resolution.</p>
+            <p>MVP scoped deliberately for a focused Lagos pilot. Subscriptions, live chat, GPS tracking, and native mobile apps deferred from v1.</p>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
   <title>ReceiptVault — Expense Tracking App | Olayemi</title>
   <meta name="description" content="A mobile expense tracking app built for Nigerian SMEs and freelancers, filling an uncontested gap in the local market with a fast, mobile-first experience." />
   <link rel="canonical" href="https://olayemi-portfolio.vercel.app/work/receiptvault.html" />
@@ -22,7 +23,7 @@
 </head>
 <body class="page-receiptvault">
 
-  <header class="site-nav">
+  <header class="site-nav site-nav--mobile-glass">
     <div class="container">
       <a href="/index.html" class="site-nav__brand">Olayemi</a>
       <nav aria-label="Primary">
@@ -35,6 +36,25 @@
       </nav>
       <a href="/contact.html#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
+
+    <div class="site-nav__float">
+      <a href="/index.html" class="site-nav__float-brand">Olayemi</a>
+      <button type="button" class="site-nav__float-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+        <span class="site-nav__float-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav__panel" id="mobile-nav-panel" aria-label="Primary mobile" hidden>
+      <button type="button" class="site-nav__panel-close" aria-label="Close menu">
+        <span class="site-nav__panel-close-icon" aria-hidden="true"></span>
+      </button>
+      <ul>
+        <li><a href="/index.html#work">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -50,6 +70,7 @@
         </div>
       </div>
     </section>
+    <script>document.querySelector('.case-study-hero').classList.add('js-reveal-ready');</script>
 
     <section class="case-study-section">
       <div class="container">
@@ -59,7 +80,9 @@
             <img src="/assets/work/receiptvault/problem%20reciept%201.svg" alt="The expense tracking gap ReceiptVault addresses for Nigerian SMEs and freelancers" loading="lazy" />
           </div>
           <div class="case-study-editorial__content">
-            <p>Most small business owners and freelancers in Nigeria track expenses through accounting software like QuickBooks, Sage, or Wave, or default to Excel spreadsheets, and the less organized resort to physical drawers, handwritten notes, or nothing at all. None of these offer a fast, mobile-first, real-time expense capture experience. Existing alternatives fall short for different reasons: Expensify is foreign-built, dollar-priced, and designed for teams rather than solo operators; Wave is free but not localized for Nigeria; Pearmonie is the closest local competitor but focuses on sales tracking rather than expense capture. No existing tool combines mobile expense capture, receipt photo storage, categorization, and tax-ready reporting for Nigerian SMEs and freelancers specifically: a gap made more urgent by Nigeria's new tax reforms, which now require businesses to maintain verifiable digital expense records to qualify for tax exemptions.</p>
+            <p>Most Nigerian small business owners and freelancers track expenses through QuickBooks, Sage, Wave, or Excel. The less organized use physical drawers, handwritten notes, or nothing at all. None of these offer a fast, mobile-first, real-time expense capture experience.</p>
+            <p>Existing alternatives fall short across the board. Expensify is foreign-built, dollar-priced, and designed for teams. Wave is free but not localized for Nigeria. Pearmonie focuses on sales tracking, not expense capture.</p>
+            <p>No tool combines mobile expense capture, receipt photo storage, categorization, and tax-ready reporting for Nigerian SMEs and freelancers. Nigeria's new tax reforms make this gap urgent, requiring verifiable digital expense records to qualify for tax exemptions.</p>
           </div>
         </div>
       </div>
@@ -73,13 +96,11 @@
             <img src="/assets/work/receiptvault/solution%20reciept%201.svg" alt="ReceiptVault's mobile-first expense tracking solution" loading="lazy" />
           </div>
           <div class="case-study-editorial__content">
-            <ul>
-              <li>Contributed to the market intelligence research phase: identifying the gap in the Nigerian expense tracking space and analysing competing tools like QuickBooks, Sage, Wave, and Pearmonie.</li>
-              <li>Designed the UI interface, translating research insights into clean, mobile-first screens for the core expense tracking experience.</li>
-              <li>Designed a fast receipt capture flow: snap or upload a photo, tag a category, and log the expense in seconds.</li>
-              <li>Designed categorization and reporting screens to help users generate the verifiable, tax-ready expense records now required under Nigeria's tax reforms.</li>
-              <li>Prioritized a mobile-first, low-friction interface suited to solo operators and small teams working on the go.</li>
-            </ul>
+            <p>Contributed to the market intelligence research phase, identifying the gap in Nigeria's expense tracking space and analyzing competitors like QuickBooks, Sage, Wave, and Pearmonie.</p>
+            <p>Designed the UI interface, translating research insights into clean, mobile-first screens for the core expense tracking experience.</p>
+            <p>A fast receipt capture flow: snap or upload a photo, tag a category, and log the expense in seconds.</p>
+            <p>Categorization and reporting screens designed to generate the verifiable, tax-ready expense records now required under Nigeria's tax reforms.</p>
+            <p>Mobile-first, low-friction interface suited to solo operators and small teams working on the go.</p>
           </div>
         </div>
       </div>

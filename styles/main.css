@@ -2327,29 +2327,14 @@ select.contact__input:invalid {
   }
 }
 
-/* Case study pages */
+/* Case study pages — tight consistent spacing */
 .case-study-hero {
-  padding-block: var(--space-xl) var(--space-2xl);
+  padding-block: var(--space-lg);
 }
 
 @media (min-width: 1024px) {
   .case-study-hero {
     padding-block: var(--space-xl);
-  }
-}
-
-/* StackIt's hero has no media, so its bottom padding otherwise stacks with the
-   next section's top padding into an oversized empty gap. Section bottoms are
-   trimmed to match, keeping every section-to-section gap the same size. */
-.page-stackit .case-study-hero,
-.page-stackit .case-study-section {
-  padding-bottom: var(--space-md);
-}
-
-@media (min-width: 1024px) {
-  .page-stackit .case-study-hero,
-  .page-stackit .case-study-section {
-    padding-bottom: var(--space-sm);
   }
 }
 
@@ -2444,7 +2429,7 @@ select.contact__input:invalid {
 }
 
 .case-study-section {
-  padding-block: var(--space-2xl);
+  padding-block: var(--space-lg);
   border-top: 1px solid var(--color-border);
 }
 
@@ -2724,7 +2709,7 @@ select.contact__input:invalid {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: var(--space-2xl);
+  padding-block: var(--space-lg);
   border-top: 1px solid var(--color-border);
 }
 
@@ -2892,7 +2877,7 @@ select.contact__input:invalid {
 
 .case-study-cta {
   border-top: 1px solid var(--color-border);
-  padding-block: var(--space-xl);
+  padding-block: var(--space-lg);
 }
 
 @media (min-width: 1024px) {

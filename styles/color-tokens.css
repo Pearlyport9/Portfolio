@@ -39,19 +39,3 @@
   --color-accent-hover: hsl(10, 69%, 47%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-gold: hsl(44, 74%, 31%);
-    --color-cream: hsl(43, 73%, 90%);
-    --color-bg-dark: hsl(42, 68%, 10%);
-    --color-background: hsl(42, 68%, 10%);
-    --color-surface: hsl(42, 68%, 10%);
-    --color-text-primary: hsl(43, 73%, 90%);
-    --color-text-on-dark: hsl(43, 73%, 90%);
-    --color-text-muted: #6B6B6B;
-    --color-border: #E5E0D8;
-    --color-link-hover: #A8842A;
-    --color-accent: hsl(12, 74%, 53%);
-    --color-accent-hover: hsl(10, 69%, 47%);
-  }
-}

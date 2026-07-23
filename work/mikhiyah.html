@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
   <title>Mikhiyah — Wellness Website | Olayemi</title>
   <meta name="description" content="Website design for a mental wellness and community support organisation: a warm, accessible digital space that reflects the mission of healing and hope." />
   <link rel="canonical" href="https://olayemi-portfolio.vercel.app/work/mikhiyah.html" />
@@ -22,7 +23,7 @@
 </head>
 <body class="page-mikhiyah">
 
-  <header class="site-nav">
+  <header class="site-nav site-nav--mobile-glass">
     <div class="container">
       <a href="/index.html" class="site-nav__brand">Olayemi</a>
       <nav aria-label="Primary">
@@ -35,6 +36,25 @@
       </nav>
       <a href="/contact.html#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
+
+    <div class="site-nav__float">
+      <a href="/index.html" class="site-nav__float-brand">Olayemi</a>
+      <button type="button" class="site-nav__float-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+        <span class="site-nav__float-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav__panel" id="mobile-nav-panel" aria-label="Primary mobile" hidden>
+      <button type="button" class="site-nav__panel-close" aria-label="Close menu">
+        <span class="site-nav__panel-close-icon" aria-hidden="true"></span>
+      </button>
+      <ul>
+        <li><a href="/index.html#work">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -50,6 +70,7 @@
         </div>
       </div>
     </section>
+    <script>document.querySelector('.case-study-hero').classList.add('js-reveal-ready');</script>
 
     <section class="case-study-section">
       <div class="container">
@@ -59,7 +80,10 @@
             <img src="/assets/work/mikhiyah/Problem%20mik%201%20%281%29.svg" alt="The accessibility gap Mikhiyah needed its website to close" loading="lazy" />
           </div>
           <div class="case-study-editorial__content">
-            <p>Mikhiyah needed a warm, accessible website that reflected its mission of mental wellness and community support: a digital space that felt as safe and intentional as the organisation itself. Visitors typically arrive looking for mental health resources, mindfulness tools, or faith-based support during a vulnerable moment, so the site couldn't feel clinical, cold, or corporate. Tone and pacing needed to match the sensitivity of the subject matter. Without an existing site, the organisation had no central place to point people toward its resources, its on-the-ground community work (including its Guinea programme), or its mindfulness and spirituality offerings. Everything lived scattered across word-of-mouth and disconnected channels, or nowhere at all. The site also had to serve a broad audience with varying levels of digital comfort, which meant keeping navigation simple and reassuring rather than feature-heavy.</p>
+            <p>Mikhiyah needed a warm, accessible website that reflected its mission of mental wellness and community support. A digital space that felt as safe and intentional as the organization itself.</p>
+            <p>Visitors arrive during vulnerable moments, looking for mental health resources, mindfulness tools, or faith-based support. The site couldn't feel clinical, cold, or corporate.</p>
+            <p>Without an existing site, the organization had no central place to point people toward its resources, its community work in Guinea, or its mindfulness and spirituality offerings. Everything lived scattered across word-of-mouth and disconnected channels.</p>
+            <p>The site had to serve a broad audience with varying levels of digital comfort, keeping navigation simple and reassuring rather than feature-heavy.</p>
           </div>
         </div>
       </div>
@@ -73,14 +97,12 @@
             <img src="/assets/work/mikhiyah/solution%20%20mik%20%202%201.svg" alt="Mikhiyah's warm, accessible website solution" loading="lazy" />
           </div>
           <div class="case-study-editorial__content">
-            <ul>
-              <li>Part of the collaborative team responsible for designing the UI interface, working from client-provided copy and brand direction.</li>
-              <li>Designed a card-based Resources grid (six cards across two rows of three) so visitors can quickly scan available support materials.</li>
-              <li>Built a split-screen Guinea section with three feature boxes to highlight the organisation's on-the-ground community work.</li>
-              <li>Structured a two-section layout separating Mindfulness and Faith/Spirituality content, keeping each pillar of support distinct and easy to navigate.</li>
-              <li>Designed the hero around the line "Tools for Healing, Hope, and Well-Being" to set a warm, welcoming tone from the first visit.</li>
-              <li>Kept the interface calm and accessible throughout, in line with the sensitivity a mental wellness audience needs.</li>
-            </ul>
+            <p>Part of the collaborative team responsible for designing the UI interface, working from client-provided copy and brand direction.</p>
+            <p>A card-based Resources grid with six cards across two rows of three, so visitors can quickly scan available support materials.</p>
+            <p>A split-screen Guinea section with three feature boxes to highlight the organization's on-the-ground community work.</p>
+            <p>Two-section layout separating Mindfulness and Faith and Spirituality content, keeping each pillar of support distinct and easy to navigate.</p>
+            <p>Hero designed around the line "Tools for Healing, Hope, and Well-Being" to set a warm, welcoming tone from the first visit.</p>
+            <p>Interface kept calm and accessible throughout, matching the sensitivity a mental wellness audience needs.</p>
           </div>
         </div>
       </div>

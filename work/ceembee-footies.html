@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
   <title>Ceembee Footies — E-Commerce Site | Olayemi</title>
   <meta name="description" content="A clean, minimal e-commerce storefront for a handmade leather shoes and slides brand — designed to let the product do the talking." />
   <link rel="canonical" href="https://olayemi-portfolio.vercel.app/work/ceembee-footies.html" />
@@ -22,7 +23,7 @@
 </head>
 <body class="page-ceembee">
 
-  <header class="site-nav">
+  <header class="site-nav site-nav--mobile-glass">
     <div class="container">
       <a href="/index.html" class="site-nav__brand">Olayemi</a>
       <nav aria-label="Primary">
@@ -35,6 +36,25 @@
       </nav>
       <a href="/contact.html#contact" class="pill pill--availability">Available for New Projects</a>
     </div>
+
+    <div class="site-nav__float">
+      <a href="/index.html" class="site-nav__float-brand">Olayemi</a>
+      <button type="button" class="site-nav__float-toggle" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+        <span class="site-nav__float-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav__panel" id="mobile-nav-panel" aria-label="Primary mobile" hidden>
+      <button type="button" class="site-nav__panel-close" aria-label="Close menu">
+        <span class="site-nav__panel-close-icon" aria-hidden="true"></span>
+      </button>
+      <ul>
+        <li><a href="/index.html#work">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1idHsrfaEuY2Ho_sT4BaS8Tn30usoYLpO/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -50,6 +70,7 @@
         </div>
       </div>
     </section>
+    <script>document.querySelector('.case-study-hero').classList.add('js-reveal-ready');</script>
 
     <section class="case-study-section">
       <div class="container">
@@ -59,7 +80,9 @@
             <img src="/assets/work/ceembee/problem%20svgggg.svg" alt="The friction Ceembee Footies needed to remove from its online shopping experience" loading="lazy" />
           </div>
           <div class="case-study-editorial__content">
-            <p>Ceembee Footies needed a simple, focused online storefront that let the product do the talking: handmade leather shoes and slides that needed to be seen clearly, selected easily, and purchased without friction. No complex flows, no unnecessary pages, just a clean shopping experience that matched the craftsmanship of the product. Handmade leather goods also don't translate well to generic marketplace listings, where product photos compete with mass-produced alternatives and the craftsmanship behind each pair is easy to overlook. The brand needed a storefront it fully controlled, from photography to checkout, to present that quality on its own terms. Built and maintained solo, the site also had to stay lightweight and easy to update without needing a developer for every new product drop or price change.</p>
+            <p>Handmade leather shoes and slides need to be seen clearly, selected easily, and purchased without friction. A clean shopping experience that matches the craftsmanship of the product, not a complex flow with unnecessary pages.</p>
+            <p>Generic marketplace listings don't work for handmade goods. Product photos compete with mass-produced alternatives, and the craftsmanship behind each pair is easy to overlook.</p>
+            <p>The brand needed a storefront it fully controlled, from photography to checkout. Built and maintained solo, the site had to be lightweight and easy to update without a developer for every new drop or price change.</p>
           </div>
         </div>
       </div>
@@ -73,14 +96,12 @@
             <img src="/assets/work/ceembee/Solution%20svg.svg" alt="Ceembee Footies' clean, product-first e-commerce flow" loading="lazy" />
           </div>
           <div class="case-study-editorial__content">
-            <ul>
-              <li>Designed and built solo as a straightforward e-commerce experience, prioritizing a fast launch over feature breadth.</li>
-              <li>Core flow: landing page → product listing → product detail → cart → checkout, kept short to minimize drop-off.</li>
-              <li>Organized the catalog by style and category (shoes vs. slides) so customers could browse and find their size with minimal clicks.</li>
-              <li>Design focused on product photography as the hero element: large visuals, minimal UI clutter, letting the craftsmanship of each pair carry the page.</li>
-              <li>Built mobile-first, since most of the brand's traffic arrives through Instagram and other social links.</li>
-              <li>Structured content and pricing to be easy to update solo: new drops and price changes don't require touching code.</li>
-            </ul>
+            <p>Designed and built solo as a straightforward e-commerce experience, prioritizing a fast launch over feature breadth.</p>
+            <p>Core flow kept short to minimize drop-off: landing page to product listing to product detail to cart to checkout.</p>
+            <p>Catalog organized by style and category so customers browse and find their size in minimal clicks.</p>
+            <p>Design centers on product photography as the hero element: large visuals, minimal UI clutter, letting the craftsmanship carry each page.</p>
+            <p>Built mobile-first, since most traffic arrives through Instagram and other social links.</p>
+            <p>Content and pricing structured to be updated solo, without touching code.</p>
           </div>
         </div>
       </div>
