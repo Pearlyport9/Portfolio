@@ -325,52 +325,14 @@
 
         <div class="contact__panel" id="contact-panel-call" role="tabpanel" aria-labelledby="contact-tab-call">
           <div class="contact__cal-wrap">
-            <div id="cal-inline-30min" class="contact__cal-embed" aria-label="Book a 30 minute call with Olayemi"></div>
+            <iframe
+              class="contact__cal-embed"
+              src="https://cal.eu/olayemi-gnwhh0/30min?theme=dark"
+              title="Book a 30 minute call with Olayemi"
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
-
-        <!-- Cal.com official inline embed, replaces a raw <iframe src="..."> because the
-             plain iframe embed didn't reliably register taps on the date/time buttons on
-             mobile. This is cal.com's own loader snippet (self-hosted at cal.eu), which
-             handles cross-frame touch/click events and responsive sizing itself. -->
-        <script type="text/javascript">
-          (function (C, A, L) {
-            let p = function (a, ar) { a.q.push(ar); };
-            let d = C.document;
-            C.Cal = C.Cal || function () {
-              let cal = C.Cal;
-              let ar = arguments;
-              if (!cal.loaded) {
-                cal.ns = {};
-                cal.q = cal.q || [];
-                d.head.appendChild(d.createElement("script")).src = A;
-                cal.loaded = true;
-              }
-              if (ar[0] === L) {
-                const api = function () { p(api, arguments); };
-                const namespace = ar[1];
-                api.q = api.q || [];
-                if (typeof namespace === "string") {
-                  cal.ns[namespace] = cal.ns[namespace] || api;
-                  p(cal.ns[namespace], ar);
-                  p(cal, ["initNamespace", namespace]);
-                } else p(cal, ar);
-                return;
-              }
-              p(cal, ar);
-            };
-          })(window, "https://cal.eu/embed/embed.js", "init");
-
-          Cal("init", "30min", { origin: "https://cal.eu" });
-
-          Cal.ns["30min"]("inline", {
-            elementOrSelector: "#cal-inline-30min",
-            config: { layout: "month_view" },
-            calLink: "olayemi-gnwhh0/30min",
-          });
-
-          Cal.ns["30min"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
-        </script>
 
         <div class="contact__panel" id="contact-panel-brief" role="tabpanel" aria-labelledby="contact-tab-brief" hidden>
           <form class="contact__form contact__form--brief" action="https://formspree.io/f/xdarwvzz" method="POST">

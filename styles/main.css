@@ -1868,6 +1868,12 @@ a.pill--availability:hover,
   box-shadow: var(--shadow-soft);
 }
 
+/* Homepage only: remove the brown card background so no gap shows through
+   behind the iframe. The contact page keeps its wrapper background. */
+body:not(.page-contact) .contact__cal-wrap {
+  background: none;
+}
+
 .contact__cal-embed {
   display: block;
   width: 100%;
