@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   setUpScrollReveal(document.querySelector('.skills'), '.skills__heading, .skill-pill');
   setUpScrollReveal(document.querySelector('.tool-stack'), '.tool-card');
-  setUpScrollReveal(document.querySelector('.contact'), 'h2, .contact__subtext, .contact__form');
+  setUpScrollReveal(document.querySelector('.contact'), 'h2, .contact__subtext, .contact__cal-wrap, .contact__form');
   setUpScrollReveal(document.querySelector('.page-everiithing .case-study-hero'), '.case-study-hero__media');
   setUpScrollReveal(
     document.querySelector('.page-everiithing .case-study-editorial--top'),
@@ -768,4 +768,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateClock();
   setInterval(updateClock, 1000);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const calIframe = document.querySelector('.contact__cal-embed');
+  if (!calIframe) return;
+
+  let scrollTimeout;
+  const disableScrollCapture = () => {
+    calIframe.style.pointerEvents = 'none';
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      calIframe.style.pointerEvents = '';
+    }, 200);
+  };
+
+  window.addEventListener('scroll', disableScrollCapture, { passive: true });
 });
