@@ -1884,7 +1884,7 @@ body:not(.page-contact) .contact__cal-wrap {
   touch-action: none;
 }
 
-/* Mobile: the cal.eu widget stacks the calendar and time-slot list
+/* Mobile: the cal.com widget stacks the calendar and time-slot list
    vertically instead of side-by-side, which needs meaningfully more
    height than the desktop 680px box. A fixed height tuned for desktop
    left mobile content cramped/cut off, so dates near the bottom weren't
