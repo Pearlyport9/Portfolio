@@ -6,11 +6,11 @@ Note to agent: add these as <title> and <meta name="description"> tags in the <h
 
 ## Homepage
 
-**Title:** Olayemi Oluwatominiyi — Product Designer & Design Engineer
+**Title:** Olawunmi Okedele — Product Designer & Design Engineer
 
 **Meta description:** Freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design experiences that feel effortless — and build them too.
 
-**OG title:** Olayemi Oluwatominiyi — Product Designer & Design Engineer
+**OG title:** Olawunmi Okedele — Product Designer & Design Engineer
 
 **OG description:** Freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design experiences that feel effortless — and build them too.
 
@@ -20,7 +20,7 @@ Note to agent: add these as <title> and <meta name="description"> tags in the <h
 
 ### Everiithing
 
-**Title:** Everiithing — Verification-First Services Marketplace | Olayemi Oluwatominiyi
+**Title:** Everiithing — Verification-First Services Marketplace | Olawunmi Okedele
 
 **Meta description:** Designed and built end-to-end — Nigeria's first fully managed, verification-first marketplace connecting customers with trusted home and office service providers.
 
@@ -28,7 +28,7 @@ Note to agent: add these as <title> and <meta name="description"> tags in the <h
 
 ### BIZCORE Consulting
 
-**Title:** BIZCORE Consulting Website — Lead Generation Design | Olayemi Oluwatominiyi
+**Title:** BIZCORE Consulting Website — Lead Generation Design | Olawunmi Okedele
 
 **Meta description:** A multi-page consulting website for a Lagos-based finance and data analytics firm, designed to build credibility and convert visitors into consultation bookings.
 
@@ -36,7 +36,7 @@ Note to agent: add these as <title> and <meta name="description"> tags in the <h
 
 ### Ceembee Footies
 
-**Title:** Ceembee Footies — E-Commerce Design | Olayemi Oluwatominiyi
+**Title:** Ceembee Footies — E-Commerce Design | Olawunmi Okedele
 
 **Meta description:** A clean, minimal e-commerce storefront for a handmade leather shoes and slides brand — designed to let the product do the talking.
 
@@ -44,7 +44,7 @@ Note to agent: add these as <title> and <meta name="description"> tags in the <h
 
 ### ReceiptVault
 
-**Title:** ReceiptVault — Expense Tracking App Design | Olayemi Oluwatominiyi
+**Title:** ReceiptVault — Expense Tracking App Design | Olawunmi Okedele
 
 **Meta description:** A mobile expense tracking app built for Nigerian SMEs and freelancers — filling an uncontested gap in the local market with a fast, mobile-first experience.
 
@@ -52,7 +52,7 @@ Note to agent: add these as <title> and <meta name="description"> tags in the <h
 
 ### Mikhiyah
 
-**Title:** Mikhiyah — Mental Wellness Website Design | Olayemi Oluwatominiyi
+**Title:** Mikhiyah — Mental Wellness Website Design | Olawunmi Okedele
 
 **Meta description:** Website design for a mental wellness and community support organisation — a warm, accessible digital space that reflects the mission of healing and hope.
 
@@ -60,7 +60,7 @@ Note to agent: add these as <title> and <meta name="description"> tags in the <h
 
 ### StackIt
 
-**Title:** StackIt — Student Fintech UX Case Study | Olayemi Oluwatominiyi
+**Title:** StackIt — Student Fintech UX Case Study | Olawunmi Okedele
 
 **Meta description:** A full UX case study for a student-centric savings app — from user research and empathy mapping through to high-fidelity prototype, designed to help undergraduates build financial independence.
 
@@ -68,6 +68,6 @@ Note to agent: add these as <title> and <meta name="description"> tags in the <h
 
 ## About Page (if standalone)
 
-**Title:** About Olayemi Oluwatominiyi — Product Designer & Design Engineer
+**Title:** About Olawunmi Okedele — Product Designer & Design Engineer
 
-**Meta description:** I'm Olayemi — a freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design with intention and build with purpose.
+**Meta description:** I'm Olawunmi — a freelance Product Designer and Design Engineer working with fintechs, SaaS products, and startups. I design with intention and build with purpose.

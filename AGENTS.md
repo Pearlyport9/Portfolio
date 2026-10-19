@@ -4,7 +4,7 @@ This file is the entry point for the AI coding agent. Read the referenced files 
 
 ## Project
 
-Personal portfolio website for Olayemi Oluwatominiyi (Pearl) — Product Designer (UI/UX) and Design Engineer. Showcases 5 projects: Everiithing, BIZCORE, Ceembee Footies, ReceiptVault, Mikhiyah.
+Personal portfolio website for Olawunmi Okedele (Pearl) — Product Designer (UI/UX) and Design Engineer. Showcases 5 projects: Everiithing, BIZCORE, Ceembee Footies, ReceiptVault, Mikhiyah.
 
 ## Stack
 

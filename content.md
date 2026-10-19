@@ -11,7 +11,7 @@ Note to agent: use only the copy in this file. Do not invent metrics, outcomes, 
 **Role pills:** Product Designer · UI/UX · Design Engineer
 
 **Headline (Cormorant):**
-Hey, I'm Olayemi, a product designer who also builds what she designs.
+Hey, I'm Olawunmi, a product designer who also builds what she designs.
 
 **Subtext (Switzer):**
 I design landing pages that convert, mobile apps that feel effortless, and experiences users return to. Building something? Let's talk.
@@ -23,7 +23,7 @@ I design landing pages that convert, mobile apps that feel effortless, and exper
 ## About
 
 **Greeting (Danii's warmth):**
-Hey, I'm Olayemi 👋
+Hey, I'm Olawunmi 👋
 
 **Confidence line (Damilola's boldness, big Cormorant display text):**
 A product designer who designs with intention and builds with purpose.
@@ -68,7 +68,7 @@ Most designers stop at handoff. I go further, using AI-powered tools to build an
 
 ## Standard footer / contact line
 
-I'm Olayemi Oluwatominiyi, Product Designer (UI/UX) based in Nigeria, designing for fintechs, SaaS, and startups. Building something? Let's talk.
+I'm Olawunmi Okedele, Product Designer (UI/UX) based in Nigeria, designing for fintechs, SaaS, and startups. Building something? Let's talk.
 
 **Email:** pearlyport9@gmail.com
 
